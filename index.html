@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Softminilab | Independent App Showcase</title>
+    <meta name="description" content="Softminilab builds thoughtful iPhone utilities, from QR tools to Pomodoro focus apps, with clear product and privacy links.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#f6f1e8">
+    <meta property="og:title" content="Softminilab">
+    <meta property="og:description" content="Thoughtful iPhone utilities with direct product access and privacy information.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/images/zenpomo.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Softminilab">
+    <meta name="twitter:description" content="Thoughtful iPhone utilities with direct product access and privacy information.">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+    <div class="page-container">
+        <header class="site-header">
+            <div class="logo">Softmini<span>lab</span></div>
+            <nav class="header-nav" aria-label="Primary">
+                <a href="privacy.html" data-i18n="navPrivacy">Privacy</a>
+                <a href="mailto:karepbq@gmail.com" data-i18n="navContact">Contact</a>
+                <button type="button" class="lang-toggle" data-language-toggle aria-label="Switch language">中文</button>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            <section class="hero" aria-labelledby="hero-title">
+                <p class="hero-kicker" data-i18n="heroKicker">Independent iPhone Utilities</p>
+                <h1 id="hero-title" data-i18n="heroTitle">Small apps, carefully made for daily use.</h1>
+                <p class="hero-description" data-i18n="heroDescription">Softminilab builds focused tools for scanning, counting, prompting, lighting, and staying in flow. Each app keeps the interface simple and the purpose clear.</p>
+            </section>
+
+            <section class="apps-section" aria-labelledby="apps-title">
+                <div class="section-heading">
+                    <h2 id="apps-title" data-i18n="appsTitle">Apps</h2>
+                </div>
+
+                <div class="app-grid">
+                    <a href="privacy.html" class="app-item">
+                        <img src="assets/images/zenpomo.png" alt="ZenPomo app icon">
+                        <p class="app-title">ZenPomo</p>
+                        <p class="app-description" data-i18n="zenpomoDescription">Pomodoro focus sessions designed for calm, steady work.</p>
+                        <span class="app-cta" data-i18n="openAppStore">Open App Store</span>
+                    </a>
+                    <a href="itms-apps://itunes.apple.com/app/id1620996505" class="app-item">
+                        <img src="assets/images/qrcode.png" alt="QR Code app icon">
+                        <p class="app-title">QR Code</p>
+                        <p class="app-description" data-i18n="qrcodeDescription">Fast QR and barcode scanning for everyday use.</p>
+                        <span class="app-cta" data-i18n="openAppStore">Open App Store</span>
+                    </a>
+                    <a href="itms-apps://itunes.apple.com/app/id6446799575" class="app-item">
+                        <img src="assets/images/counter.png" alt="Counter app icon">
+                        <p class="app-title">Counter</p>
+                        <p class="app-description" data-i18n="counterDescription">A simple tally counter for tracking counts clearly.</p>
+                        <span class="app-cta" data-i18n="openAppStore">Open App Store</span>
+                    </a>
+                    <a href="itms-apps://itunes.apple.com/app/id6738280307" class="app-item">
+                        <img src="assets/images/light.png" alt="Ligit app icon">
+                        <p class="app-title">Ligit</p>
+                        <p class="app-description" data-i18n="ligitDescription">A lightweight flashlight tool with a clean interface.</p>
+                        <span class="app-cta" data-i18n="openAppStore">Open App Store</span>
+                    </a>
+                    <a href="itms-apps://itunes.apple.com/app/id6447695834" class="app-item">
+                        <img src="assets/images/aiprompt.png" alt="AI Prompt app icon">
+                        <p class="app-title">Ai prompt</p>
+                        <p class="app-description" data-i18n="aipromptDescription">Prompt ideas and writing support for AI workflows.</p>
+                        <span class="app-cta" data-i18n="openAppStore">Open App Store</span>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>Softminilab</p>
+        </footer>
+    </div>
+
+    <script>
+        const translations = {
+            en: {
+                navPrivacy: "Privacy",
+                navContact: "Contact",
+                heroKicker: "Independent iPhone Utilities",
+                heroTitle: "Small apps, carefully made for daily use.",
+                heroDescription: "Softminilab builds focused tools for scanning, counting, prompting, lighting, and staying in flow. Each app keeps the interface simple and the purpose clear.",
+                sectionLabel: "Selected Work",
+                appsTitle: "Apps",
+                qrcodeDescription: "Fast QR and barcode scanning for everyday use.",
+                counterDescription: "A simple tally counter for tracking counts clearly.",
+                ligitDescription: "A lightweight flashlight tool with a clean interface.",
+                aipromptDescription: "Prompt ideas and writing support for AI workflows.",
+                zenpomoDescription: "Pomodoro focus sessions designed for calm, steady work.",
+                openAppStore: "Open App Store",
+                htmlLang: "en",
+                langToggle: "中文"
+            },
+            zh: {
+                navPrivacy: "隐私政策",
+                navContact: "联系我们",
+                heroKicker: "独立 iPhone 工具应用",
+                heroTitle: "为日常使用认真打磨的小应用。",
+                heroDescription: "Softminilab 专注于扫描、计数、提示词、照明与专注类工具。每个应用都保持清晰目的和简洁体验。",
+                sectionLabel: "精选作品",
+                appsTitle: "应用列表",
+                qrcodeDescription: "快速扫描二维码和条形码，适合日常使用。",
+                counterDescription: "简洁直观的计数工具，适合日常记录与统计。",
+                ligitDescription: "轻量好用的手电筒工具，界面干净直接。",
+                aipromptDescription: "为 AI 工作流提供提示词灵感与写作辅助。",
+                zenpomoDescription: "帮助你平静进入节奏的番茄钟专注应用。",
+                openAppStore: "前往 App Store",
+                htmlLang: "zh-CN",
+                langToggle: "EN"
+            }
+        };
+
+        const languageButton = document.querySelector("[data-language-toggle]");
+        const translatableNodes = document.querySelectorAll("[data-i18n]");
+
+        function applyLanguage(language) {
+            const locale = translations[language] || translations.en;
+            document.documentElement.lang = locale.htmlLang;
+            translatableNodes.forEach((node) => {
+                const key = node.dataset.i18n;
+                if (locale[key]) {
+                    node.textContent = locale[key];
+                }
+            });
+            document.title = language === "zh" ? "Softminilab | 独立应用展示" : "Softminilab | Independent App Showcase";
+            const description = document.querySelector('meta[name="description"]');
+            if (description) {
+                description.content = language === "zh"
+                    ? "Softminilab 展示独立开发的 iPhone 工具应用，提供产品入口、隐私信息与支持方式。"
+                    : "Softminilab builds thoughtful iPhone utilities, from QR tools to Pomodoro focus apps, with clear product and privacy links.";
+            }
+            languageButton.textContent = locale.langToggle;
+            localStorage.setItem("softminilab-language", language);
+        }
+
+        const savedLanguage = localStorage.getItem("softminilab-language");
+        const browserPrefersZh = (navigator.language || "").toLowerCase().startsWith("zh");
+        const initialLanguage = savedLanguage ? savedLanguage : (browserPrefersZh ? "zh" : "en");
+        applyLanguage(initialLanguage);
+
+        languageButton.addEventListener("click", () => {
+            const nextLanguage = document.documentElement.lang === "zh-CN" ? "en" : "zh";
+            applyLanguage(nextLanguage);
+        });
+    </script>
+</body>
+</html>

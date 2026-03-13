@@ -1,0 +1,582 @@
+:root {
+    --bg: #f6f1e8;
+    --bg-accent: #fdf8ef;
+    --surface: rgba(255, 252, 247, 0.78);
+    --surface-strong: rgba(255, 252, 247, 0.92);
+    --line: rgba(74, 56, 36, 0.12);
+    --text: #2b241d;
+    --muted: #6d6257;
+    --muted-strong: #4b4035;
+    --accent: #d96c3a;
+    --accent-soft: rgba(217, 108, 58, 0.12);
+    --shadow: 0 24px 80px rgba(61, 42, 20, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.92), transparent 34%),
+        radial-gradient(circle at top right, rgba(236, 214, 190, 0.55), transparent 30%),
+        linear-gradient(180deg, var(--bg-accent) 0%, var(--bg) 58%, #efe7db 100%);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Main Layout Container for Vertical Rhythm --- */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* --- Header & Logo --- */
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 2rem 0 1.25rem;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+}
+
+.logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.header-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.header-nav a,
+.lang-toggle {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.7rem 1rem;
+    background: rgba(255, 255, 255, 0.42);
+    color: var(--muted-strong);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.lang-toggle {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.header-nav a:hover,
+.lang-toggle:hover {
+    background: rgba(255, 255, 255, 0.75);
+    border-color: rgba(74, 56, 36, 0.2);
+    transform: translateY(-1px);
+}
+
+/* --- Main Content Area --- */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 2.25rem 0 4rem;
+}
+
+.hero {
+    position: relative;
+    padding: 3.5rem;
+    border: 1px solid var(--line);
+    border-radius: 32px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.78), rgba(249, 240, 230, 0.9));
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    right: -3rem;
+    top: -4rem;
+    width: 16rem;
+    height: 16rem;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(217, 108, 58, 0.18), rgba(217, 108, 58, 0));
+    pointer-events: none;
+}
+
+.hero-kicker,
+.section-label {
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.hero h1 {
+    max-width: 10ch;
+    margin-top: 1rem;
+    font-size: clamp(3rem, 6vw, 5.2rem);
+    line-height: 0.96;
+    letter-spacing: -0.06em;
+}
+
+.hero-description {
+    max-width: 46rem;
+    margin-top: 1.5rem;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--muted-strong);
+}
+
+.apps-section {
+    margin-top: 2rem;
+    padding: 1.25rem 0 0;
+}
+
+.section-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.section-heading h2 {
+    font-size: 2.1rem;
+    letter-spacing: -0.04em;
+}
+
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+    width: 100%;
+}
+
+.app-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.1rem;
+    text-decoration: none;
+    color: var(--text);
+    width: 100%;
+    padding: 1.35rem;
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    background: var(--surface);
+    backdrop-filter: blur(12px);
+    min-height: 21rem;
+    box-shadow: 0 10px 30px rgba(61, 42, 20, 0.04);
+    transition: transform 0.28s ease, background-color 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+}
+
+.app-item img {
+    width: 104px;
+    height: 104px;
+    flex: 0 0 104px;
+    border-radius: 22.5%;
+    box-shadow: 0 12px 30px rgba(31, 20, 10, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.app-item:hover {
+    transform: translateY(-4px);
+    background: var(--surface-strong);
+    border-color: rgba(74, 56, 36, 0.18);
+    box-shadow: 0 18px 40px rgba(61, 42, 20, 0.08);
+}
+
+.app-item:hover img {
+    transform: scale(1.04);
+    box-shadow: 0 16px 34px rgba(31, 20, 10, 0.16);
+}
+
+.app-title {
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: -0.03em;
+    color: var(--text);
+}
+
+.app-description {
+    margin-top: 0.55rem;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--muted);
+    max-width: 22ch;
+}
+
+.app-cta {
+    display: inline-block;
+    margin-top: 1.2rem;
+    font-size: 0.84rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+/* --- Footer --- */
+.site-footer {
+    padding: 3rem 0 4rem;
+    text-align: center;
+}
+
+.site-footer p {
+    display: inline-block;
+    border-top: 1px solid rgba(74, 56, 36, 0.12);
+    padding-top: 1.5rem;
+    font-weight: 600;
+    font-size: 0.98rem;
+    color: var(--text);
+}
+
+.privacy-actions {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.privacy-actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.75rem;
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.72);
+    color: var(--muted-strong);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.privacy-actions a:hover {
+    background: rgba(255, 255, 255, 0.92);
+    border-color: rgba(74, 56, 36, 0.2);
+    transform: translateY(-1px);
+}
+
+
+/* --- Privacy Page Specific Styles --- */
+.privacy-content {
+    width: 100%;
+    max-width: 800px;
+    padding: 2rem 0;
+    color: #4a4a4a;
+    margin-left: auto;
+    margin-right: auto;
+    /* 核心改动：确保父容器内的所有文本都默认为居中对齐 */
+    text-align: center; 
+}
+
+.privacy-content h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 1.5rem;
+}
+
+.privacy-content h2 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #222;
+    margin-top: 3.5rem;
+    margin-bottom: 2rem;
+}
+
+.privacy-content p, .privacy-content ul {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    margin-bottom: 2rem;
+    /* 核心改动：移除了这里的 text-align: left; */
+}
+
+.privacy-content ul {
+    /* 核心改动：移除列表符号和边距，因为它们在居中时不好看 */
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.privacy-content ul li {
+    margin-bottom: 1.2rem;
+}
+
+.privacy-content a {
+    color: #007aff;
+    text-decoration: none;
+    border-bottom: 1px solid #007aff;
+}
+.privacy-content a:hover {
+    color: #0056b3;
+    border-bottom-color: #0056b3;
+}
+
+.privacy-content--document {
+    max-width: 900px;
+    padding: 0;
+    text-align: left;
+}
+
+.privacy-content--document h1 {
+    margin-bottom: 1.25rem;
+}
+
+.policy-hero {
+    margin-bottom: 1.5rem;
+    padding: 1.6rem 1.6rem 1.4rem;
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(247, 239, 229, 0.95));
+    box-shadow: 0 14px 36px rgba(61, 42, 20, 0.05);
+}
+
+.policy-kicker {
+    margin-bottom: 0.7rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.policy-summary {
+    max-width: 42rem;
+    margin-top: 0.75rem;
+}
+
+.policy-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: 1rem;
+}
+
+.policy-meta span,
+.policy-toc a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.4rem;
+    padding: 0.55rem 0.85rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.72);
+    color: var(--muted-strong);
+    font-size: 0.92rem;
+    text-decoration: none;
+}
+
+.policy-toc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.policy-toc a:hover {
+    background: rgba(255, 255, 255, 0.92);
+    border-color: rgba(74, 56, 36, 0.2);
+}
+
+.privacy-content--document h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.privacy-content--document h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.15rem;
+    color: var(--text);
+}
+
+.privacy-content--document p,
+.privacy-content--document ul {
+    margin-bottom: 1.1rem;
+    color: var(--muted-strong);
+    line-height: 1.85;
+    text-align: left;
+}
+
+.privacy-content--document ul {
+    list-style: disc;
+    padding-left: 1.4rem;
+}
+
+.privacy-content--document ul li {
+    margin-bottom: 0.85rem;
+}
+
+
+/* --- Responsive Design for Mobile --- */
+@media (max-width: 768px) {
+    .page-container {
+        padding: 0 1.5rem;
+    }
+
+    .site-header {
+        padding: 1.5rem 0 1rem;
+    }
+
+    .header-nav {
+        gap: 0.5rem;
+    }
+
+    .header-nav a,
+    .lang-toggle {
+        padding: 0.65rem 0.9rem;
+    }
+
+    .hero {
+        padding: 2rem;
+    }
+
+    .hero h1 {
+        max-width: 12ch;
+    }
+
+    .site-footer { padding: 4rem 0; }
+
+    .app-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+    }
+
+    .privacy-actions {
+        gap: 0.6rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .page-container {
+        padding: 0 1rem;
+    }
+
+    .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-nav {
+        flex-wrap: wrap;
+    }
+
+    .main-content {
+        padding-top: 1rem;
+    }
+
+    .hero {
+        padding: 1.4rem;
+        border-radius: 24px;
+    }
+
+    .hero h1 {
+        font-size: 2.6rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .section-heading {
+        flex-direction: column;
+        margin-bottom: 1rem;
+    }
+
+    .section-heading h2 {
+        font-size: 1.8rem;
+    }
+
+    .app-grid {
+        grid-template-columns: 1fr;
+        gap: 0.9rem;
+    }
+
+    .app-item {
+        min-height: auto;
+        padding: 1rem;
+        border-radius: 20px;
+    }
+
+    .app-item img {
+        width: 88px;
+        height: 88px;
+        flex-basis: 88px;
+    }
+
+    .app-description {
+        font-size: 0.95rem;
+        max-width: none;
+    }
+
+    .logo, .privacy-content h1 {
+        text-align: left;
+    }
+
+    .privacy-content h1 { font-size: 2.2rem; }
+    .privacy-content h2 { font-size: 1.5rem; }
+    .privacy-content p, .privacy-content ul { font-size: 1rem; }
+
+    .privacy-actions a {
+        width: 100%;
+    }
+
+    .privacy-content--document h2 {
+        font-size: 1.35rem;
+    }
+
+    .privacy-content--document h3 {
+        font-size: 1.05rem;
+    }
+
+    .policy-hero {
+        padding: 1.2rem;
+        border-radius: 20px;
+    }
+
+    .policy-toc {
+        gap: 0.55rem;
+    }
+
+    .policy-toc a,
+    .policy-meta span {
+        width: 100%;
+    }
+}
