@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Softminilab</title>
-    <meta name="description" content="Softminilab privacy policy and service terms.">
+    <title>Privacy Policy - Softminilabs</title>
+    <meta name="description" content="Softminilabs privacy policy and service terms.">
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -75,7 +75,7 @@
         </main>
 
         <footer class="site-footer">
-            <p>Softminilab</p>
+            <p>Softminilabs</p>
         </footer>
     </div>
 
@@ -171,18 +171,18 @@
                     node.textContent = locale[key];
                 }
             });
-            document.title = language === "zh" ? "Softminilab | 隐私政策" : "Softminilab | Privacy Policy";
+            document.title = language === "zh" ? "Softminilabs | 隐私政策" : "Softminilabs | Privacy Policy";
             const description = document.querySelector('meta[name="description"]');
             if (description) {
                 description.content = language === "zh"
-                    ? "Softminilab 隐私政策与服务条款说明。"
-                    : "Softminilab privacy policy and service terms.";
+                    ? "Softminilabs 隐私政策与服务条款说明。"
+                    : "Softminilabs privacy policy and service terms.";
             }
             languageButton.textContent = locale.langToggle;
-            localStorage.setItem("softminilab-language", language);
+            localStorage.setItem("Softminilabs-language", language);
         }
 
-        const savedLanguage = localStorage.getItem("softminilab-language");
+        const savedLanguage = localStorage.getItem("Softminilabs-language");
         const browserPrefersZh = (navigator.language || "").toLowerCase().startsWith("zh");
         const initialLanguage = savedLanguage ? savedLanguage : (browserPrefersZh ? "zh" : "en");
         applyLanguage(initialLanguage);

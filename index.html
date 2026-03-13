@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Softminilab | Independent App Showcase</title>
-    <meta name="description" content="Softminilab builds thoughtful iPhone utilities, from QR tools to Pomodoro focus apps, with clear product and privacy links.">
+    <title>Softminilabs | Independent App Showcase</title>
+    <meta name="description" content="Softminilabs builds thoughtful iPhone utilities, from QR tools to Pomodoro focus apps, with clear product and privacy links.">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#f6f1e8">
-    <meta property="og:title" content="Softminilab">
+    <meta property="og:title" content="Softminilabs">
     <meta property="og:description" content="Thoughtful iPhone utilities with direct product access and privacy information.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="assets/images/zenpomo.png">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Softminilab">
+    <meta name="twitter:title" content="Softminilabs">
     <meta name="twitter:description" content="Thoughtful iPhone utilities with direct product access and privacy information.">
     <link rel="stylesheet" href="assets/style.css">
 </head>
@@ -32,7 +32,7 @@
             <section class="hero" aria-labelledby="hero-title">
                 <p class="hero-kicker" data-i18n="heroKicker">Independent iPhone Utilities</p>
                 <h1 id="hero-title" data-i18n="heroTitle">Small apps, carefully made for daily use.</h1>
-                <p class="hero-description" data-i18n="heroDescription">Softminilab builds focused tools for scanning, counting, prompting, lighting, and staying in flow. Each app keeps the interface simple and the purpose clear.</p>
+                <p class="hero-description" data-i18n="heroDescription">Softminilabs builds focused tools for scanning, counting, prompting, lighting, and staying in flow. Each app keeps the interface simple and the purpose clear.</p>
             </section>
 
             <section class="apps-section" aria-labelledby="apps-title">
@@ -76,7 +76,7 @@
         </main>
 
         <footer class="site-footer">
-            <p>Softminilab</p>
+            <p>Softminilabs</p>
         </footer>
     </div>
 
@@ -87,7 +87,7 @@
                 navContact: "Contact",
                 heroKicker: "Independent iPhone Utilities",
                 heroTitle: "Small apps, carefully made for daily use.",
-                heroDescription: "Softminilab builds focused tools for scanning, counting, prompting, lighting, and staying in flow. Each app keeps the interface simple and the purpose clear.",
+                heroDescription: "Softminilabs builds focused tools for scanning, counting, prompting, lighting, and staying in flow. Each app keeps the interface simple and the purpose clear.",
                 sectionLabel: "Selected Work",
                 appsTitle: "Apps",
                 qrcodeDescription: "Fast QR and barcode scanning for everyday use.",
@@ -104,7 +104,7 @@
                 navContact: "联系我们",
                 heroKicker: "独立 iPhone 工具应用",
                 heroTitle: "为日常使用认真打磨的小应用。",
-                heroDescription: "Softminilab 专注于扫描、计数、提示词、照明与专注类工具。每个应用都保持清晰目的和简洁体验。",
+                heroDescription: "Softminilabs 专注于扫描、计数、提示词、照明与专注类工具。每个应用都保持清晰目的和简洁体验。",
                 sectionLabel: "精选作品",
                 appsTitle: "应用列表",
                 qrcodeDescription: "快速扫描二维码和条形码，适合日常使用。",
@@ -130,18 +130,18 @@
                     node.textContent = locale[key];
                 }
             });
-            document.title = language === "zh" ? "Softminilab | 独立应用展示" : "Softminilab | Independent App Showcase";
+            document.title = language === "zh" ? "Softminilabs | 独立应用展示" : "Softminilabs | Independent App Showcase";
             const description = document.querySelector('meta[name="description"]');
             if (description) {
                 description.content = language === "zh"
-                    ? "Softminilab 展示独立开发的 iPhone 工具应用，提供产品入口、隐私信息与支持方式。"
-                    : "Softminilab builds thoughtful iPhone utilities, from QR tools to Pomodoro focus apps, with clear product and privacy links.";
+                    ? "Softminilabs 展示独立开发的 iPhone 工具应用，提供产品入口、隐私信息与支持方式。"
+                    : "Softminilabs builds thoughtful iPhone utilities, from QR tools to Pomodoro focus apps, with clear product and privacy links.";
             }
             languageButton.textContent = locale.langToggle;
-            localStorage.setItem("softminilab-language", language);
+            localStorage.setItem("Softminilabs-language", language);
         }
 
-        const savedLanguage = localStorage.getItem("softminilab-language");
+        const savedLanguage = localStorage.getItem("Softminilabs-language");
         const browserPrefersZh = (navigator.language || "").toLowerCase().startsWith("zh");
         const initialLanguage = savedLanguage ? savedLanguage : (browserPrefersZh ? "zh" : "en");
         applyLanguage(initialLanguage);
