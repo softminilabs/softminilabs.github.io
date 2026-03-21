@@ -261,6 +261,27 @@ body {
     color: var(--text);
 }
 
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.footer-nav a {
+    color: var(--muted-strong);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.footer-nav a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
 .privacy-actions {
     display: inline-flex;
     flex-wrap: wrap;

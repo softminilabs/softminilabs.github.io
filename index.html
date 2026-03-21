@@ -22,7 +22,6 @@
         <header class="site-header">
             <div class="logo">Softmini<span>labs</span></div>
             <nav class="header-nav" aria-label="Primary">
-                <a href="privacy.html" data-i18n="navPrivacy">Privacy</a>
                 <a href="mailto:karepbq@gmail.com" data-i18n="navContact">Contact</a>
                 <button type="button" class="lang-toggle" data-language-toggle aria-label="Switch language">中文</button>
             </nav>
@@ -76,14 +75,18 @@
         </main>
 
         <footer class="site-footer">
-            <p>Softminilabs</p>
+            <nav class="footer-nav">
+                <a href="terms.html" data-i18n="navTerms">Terms of Service</a>
+                <a href="privacy.html" data-i18n="navPrivacy">Privacy Policy</a>
+            </nav>
         </footer>
     </div>
 
     <script>
         const translations = {
             en: {
-                navPrivacy: "Privacy",
+                navTerms: "Terms of Service",
+                navPrivacy: "Privacy Policy",
                 navContact: "Contact",
                 heroKicker: "Independent iPhone Utilities",
                 heroTitle: "Small apps, carefully made for daily use.",
@@ -100,6 +103,7 @@
                 langToggle: "中文"
             },
             zh: {
+                navTerms: "服务条款",
                 navPrivacy: "隐私政策",
                 navContact: "联系我们",
                 heroKicker: "独立 iPhone 工具应用",
