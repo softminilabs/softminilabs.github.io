@@ -9,10 +9,15 @@ const translations = {
         sectionLabel: "Selected Work",
         appsTitle: "Apps",
         qrcodeDescription: "Fast QR and barcode scanning for everyday use.",
+        qrcodeDescription_title: "QR Code",
         counterDescription: "A simple tally counter for tracking counts clearly.",
+        counterDescription_title: "Counter",
         ligitDescription: "A lightweight flashlight tool with a clean interface.",
+        ligitDescription_title: "Ligit",
         aipromptDescription: "Prompt ideas and writing support for AI workflows.",
+        aipromptDescription_title: "Ai prompt",
         zenpomoDescription: "Pomodoro focus sessions designed for calm, steady work.",
+        zenpomoDescription_title: "ZenPomo",
         openAppStore: "Open App Store",
         htmlLang: "en",
         langToggle: "中文",
@@ -29,10 +34,15 @@ const translations = {
         sectionLabel: "精选作品",
         appsTitle: "应用列表",
         qrcodeDescription: "快速扫描二维码和条形码，适合日常使用。",
+        qrcodeDescription_title: "全能二维码扫描",
         counterDescription: "简洁直观的计数工具，适合日常记录与统计。",
+        counterDescription_title: "极简计数器",
         ligitDescription: "轻量好用的手电筒工具，界面干净直接。",
+        ligitDescription_title: "Ligit 手电筒",
         aipromptDescription: "为 AI 工作流提供提示词灵感与写作辅助。",
+        aipromptDescription_title: "AI 提示词宝典",
         zenpomoDescription: "帮助你平静进入节奏的番茄钟专注应用。",
+        zenpomoDescription_title: "禅番茄",
         openAppStore: "前往 App Store",
         htmlLang: "zh-CN",
         langToggle: "EN",
@@ -75,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
             enBlocks.forEach(el => el.style.display = "block");
             zhBlocks.forEach(el => el.style.display = "none");
         }
-        
+
         if (languageButton) {
             languageButton.textContent = locale.langToggle;
         }

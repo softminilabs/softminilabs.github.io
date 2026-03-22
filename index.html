@@ -18,7 +18,7 @@ title: "Apps"
         {% for app in site.data.apps %}
         <a href="/{{ app.id }}.html" class="app-item">
             <img src="/{{ app.icon }}" alt="{{ app.name }} app icon">
-            <p class="app-title">{{ app.name }}</p>
+            <p class="app-title" data-i18n="{{ app.i18n_desc_key }}_title">{{ app.name }}</p>
             <p class="app-description" data-i18n="{{ app.i18n_desc_key }}"></p>
             <span class="app-cta" data-i18n="openAppStore">Open App Store</span>
         </a>
