@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+<article class="app-detail-hero">
+    <div class="app-hero-content">
+        <img src="/{{ page.icon }}" alt="{{ page.title }} App Icon" class="app-detail-icon">
+        <h1 data-i18n="{{ page.i18n_desc_key }}_title">{{ page.title }}</h1>
+        <p class="app-detail-description" data-i18n="{{ page.i18n_desc_key }}">{{ page.description }}</p>
+        
+        <div class="app-action-area">
+            <a href="https://apps.apple.com/app/id{{ page.app_store_id }}" class="download-badge">
+                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us" alt="Download on the App Store" style="height: 48px; width: auto;">
+            </a>
+        </div>
+    </div>
+
+    <!-- Screenshots area -->
+    <div class="app-screenshots">
+        {% if page.screenshots_en %}
+            {% for shot_en in page.screenshots_en %}
+                {% assign index = forloop.index0 %}
+                {% assign shot_zh = page.screenshots_zh[index] %}
+                <img src="/{{ shot_en }}" class="app-screenshot" data-i18n-src-en="/{{ shot_en }}" data-i18n-src-zh="/{{ shot_zh }}" alt="{{ page.title }} screenshot" loading="lazy">
+            {% endfor %}
+        {% else %}
+            <!-- Generic placeholders matching #F6F1E8 style -->
+            <div class="screenshot-placeholder">Screenshot Space</div>
+            <div class="screenshot-placeholder">Screenshot Space</div>
+        {% endif %}
+    </div>
+</article>
+
+<section class="cross-promote">
+    <h3 data-i18n="otherApps">Other apps from Softminilabs</h3>
+    <a href="/" class="back-home-button">← Back to Showcase</a>
+</section>
+
+<!-- Inject specific SoftwareApplication JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "{{ page.title }}",
+  "operatingSystem": "iOS",
+  "applicationCategory": "UtilitiesApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0"
+  }
+}
+</script>
