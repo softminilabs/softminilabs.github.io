@@ -4,8 +4,8 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 60px 20px;
-    margin-top: 40px;
+    padding: 20px 20px 60px;
+    margin-top: 0;
 }
 
 .app-detail-icon {
@@ -27,12 +27,27 @@
     font-size: 1.25rem;
     color: #555;
     max-width: 600px;
-    margin: 0 auto 32px;
+    margin: 0 auto 24px;
     line-height: 1.6;
 }
 
 .app-action-area {
     margin-bottom: 64px;
+}
+
+.download-badge {
+    display: inline-block;
+    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s ease;
+}
+
+.download-badge:hover {
+    transform: scale(1.05);
+    opacity: 0.95;
+}
+
+.download-badge:active {
+    transform: scale(0.97);
+    opacity: 0.9;
 }
 
 .app-screenshots {
@@ -46,9 +61,11 @@
 
 .app-screenshot, .screenshot-placeholder {
     width: 250px;
-    height: 541px; /* Approximate iOS App Store ratio */
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 250 / 541; /* Approximate iOS App Store ratio */
     border-radius: 36px;
-    box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.06);
     object-fit: contain;
     background-color: #fff;
     display: flex;
@@ -85,4 +102,41 @@
 .back-home-button:hover {
     background-color: #111;
     transform: translateY(-2px);
+}
+
+/* --- Rich Text Markdown Slot --- */
+.app-rich-content {
+    max-width: 720px;
+    margin: 40px auto 60px;
+    padding: 0 20px;
+    text-align: left;
+    color: #4a4a4a;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.app-rich-content h2, .app-rich-content h3 {
+    color: #111;
+    margin-top: 40px;
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+
+.app-rich-content p, .app-rich-content ul {
+    margin-bottom: 24px;
+}
+
+.app-rich-content ul {
+    padding-left: 24px;
+}
+
+.app-rich-content a {
+    color: #007aff;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 122, 255, 0.3);
+    transition: border-color 0.2s ease;
+}
+
+.app-rich-content a:hover {
+    border-bottom-color: #007aff;
 }

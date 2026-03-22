@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title | default: "Softminilabs" }} | Independent App Showcase</title>
+    <meta http-equiv="content-language" content="en, zh-CN">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>{% if page.url == '/' or page.url == '/index.html' %}Softminilabs | Independent App Showcase{% else %}{{ page.title }} | Softminilabs{% endif %}</title>
     <meta name="description" content="{{ page.description | default: 'Independent iPhone Utilities. Small apps, carefully made for daily use.' }}">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#f6f1e8">
+    <!-- Open Graph Metadata -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://softminilabs.github.io{{ page.url }}">
     <meta property="og:site_name" content="Softminilabs">
+    <meta property="og:title" content="{{ page.title | default: 'Softminilabs' }}">
+    <meta property="og:description" content="{{ page.description | default: 'Independent iPhone Utilities. Small apps, carefully made for daily use.' }}">
     <meta property="og:image" content="https://softminilabs.github.io/{{ page.icon | default: 'assets/images/favicon.png' }}">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:domain" content="softminilabs.github.io">
@@ -42,16 +47,17 @@
     <div class="page-container">
         <header class="site-header">
             <a href="/" class="logo" style="text-decoration: none; color: inherit;">Softmini<span>labs</span></a>
-            <nav class="header-nav" aria-label="Primary">
-                <a href="mailto:karepbq@gmail.com" data-i18n="navContact">Contact</a>
-                <button type="button" class="lang-toggle" data-language-toggle aria-label="Switch language">中文</button>
-            </nav>
-        </header>
+            <nav class="header-nav">
+            <a href="mailto:softminilabs@gmail.com" class="contact-link" data-i18n="navContact">Contact</a>
+            <button id="language-toggle" class="lang-toggle" aria-label="Toggle language between English and Chinese">中文</button>
+        </nav>
+    </header>
 
-        <main class="main-content">
-            {{ content }}
-        </main>
+    <main class="main-content" role="main">
+        {{ content }}
+    </main>
 
+    <!-- Footer -->
         <footer class="site-footer">
             <nav class="footer-nav">
                 <a href="/terms.html" data-i18n="navTerms">Terms of Service</a>

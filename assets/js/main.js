@@ -16,7 +16,8 @@ const translations = {
         openAppStore: "Open App Store",
         htmlLang: "en",
         langToggle: "中文",
-        otherApps: "Other apps from Softminilabs"
+        otherApps: "Other apps from Softminilabs",
+        backToShowcase: "← Back to Showcase"
     },
     zh: {
         navTerms: "服务条款",
@@ -35,7 +36,8 @@ const translations = {
         openAppStore: "前往 App Store",
         htmlLang: "zh-CN",
         langToggle: "EN",
-        otherApps: "Softminilabs 的其他应用"
+        otherApps: "Softminilabs 的其他应用",
+        backToShowcase: "← 返回精选应用大厅"
     }
 };
 
@@ -62,6 +64,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 img.src = img.dataset.i18nSrcEn;
             }
         });
+
+        // Dual-Language Content Block swap logic
+        const enBlocks = document.querySelectorAll("[data-i18n-content='en']");
+        const zhBlocks = document.querySelectorAll("[data-i18n-content='zh']");
+        if (language === "zh") {
+            enBlocks.forEach(el => el.style.display = "none");
+            zhBlocks.forEach(el => el.style.display = "block");
+        } else {
+            enBlocks.forEach(el => el.style.display = "block");
+            zhBlocks.forEach(el => el.style.display = "none");
+        }
         
         if (languageButton) {
             languageButton.textContent = locale.langToggle;

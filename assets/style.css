@@ -23,7 +23,7 @@ html {
 }
 
 body {
-    font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     background:
         radial-gradient(circle at top left, rgba(255, 255, 255, 0.92), transparent 34%),
         radial-gradient(circle at top right, rgba(236, 214, 190, 0.55), transparent 30%),
@@ -31,6 +31,11 @@ body {
     color: var(--text);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes fadeInFade {
+    0% { opacity: 0; transform: translateY(6px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
 /* --- Main Layout Container for Vertical Rhythm --- */
@@ -42,6 +47,7 @@ body {
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 2rem;
+    animation: fadeInFade 0.4s cubic-bezier(0.2, 1, 0.4, 1) forwards;
 }
 
 /* --- Header & Logo --- */
