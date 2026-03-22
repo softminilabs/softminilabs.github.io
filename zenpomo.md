@@ -13,7 +13,8 @@ screenshots_zh:
   - "assets/images/screenshots/zenpomo_zh_2.png"
 ---
 
-<div data-i18n-content="en">
+<div data-i18n-content="en" markdown="1">
+<h2>Overview</h2>
 
 ZenPomo is a focus timer built for study, reading, writing, and deep work.  
 It does more than count down time. It helps you block distractions, settle into a better rhythm, and build a steadier focus habit with clear stats, trends, and heatmaps.
@@ -62,7 +63,8 @@ If you want a focus app that feels calm, clear, and genuinely helps you reduce d
 
 </div>
 
-<div data-i18n-content="zh" style="display: none;">
+<div data-i18n-content="zh" style="display: none;" markdown="1">
+<h2>应用介绍</h2>
 
 ZenPomo 是一款为学习、写作、阅读与深度工作设计的专注计时器。  
 它不只是一个番茄钟，更帮助你减少分心、进入节奏，并用清晰的专注统计、趋势图和热力图，把专注慢慢变成稳定的日常习惯。
