@@ -1,106 +1,19 @@
-const translations = {
-    en: {
-        navTerms: "Terms of Service",
-        navPrivacy: "Privacy Policy",
-        navContact: "Contact",
-        heroKicker: "Independent iPhone Utilities",
-        heroTitle: "Small apps, carefully made for daily use.",
-        heroDescription: "Softminilabs builds focused tools for scanning, counting, prompting, lighting, and staying in flow. Each app keeps the interface simple and the purpose clear.",
-        sectionLabel: "Selected Work",
-        appsTitle: "Apps",
-        qrcodeDescription: "Fast QR and barcode scanning for everyday use.",
-        qrcodeDescription_title: "QR Code",
-        counterDescription: "A simple tally counter for tracking counts clearly.",
-        counterDescription_title: "Counter",
-        ligitDescription: "A lightweight flashlight tool with a clean interface.",
-        ligitDescription_title: "Ligit",
-        aipromptDescription: "Prompt ideas and writing support for AI workflows.",
-        aipromptDescription_title: "Ai prompt",
-        zenpomoDescription: "Pomodoro focus sessions designed for calm, steady work.",
-        zenpomoDescription_title: "ZenPomo",
-        openAppStore: "Open App Store",
-        htmlLang: "en",
-        langToggle: "中文",
-        otherApps: "Other apps from Softminilabs",
-        backToShowcase: "← Back to Showcase"
-    },
-    zh: {
-        navTerms: "服务条款",
-        navPrivacy: "隐私政策",
-        navContact: "联系我们",
-        heroKicker: "独立 iPhone 工具应用",
-        heroTitle: "为日常使用认真打磨的小应用。",
-        heroDescription: "Softminilabs 专注于扫描、计数、提示词、照明与专注类工具。每个应用都保持清晰目的和简洁体验。",
-        sectionLabel: "精选作品",
-        appsTitle: "应用列表",
-        qrcodeDescription: "快速扫描二维码和条形码，适合日常使用。",
-        qrcodeDescription_title: "全能二维码扫描",
-        counterDescription: "简洁直观的计数工具，适合日常记录与统计。",
-        counterDescription_title: "极简计数器",
-        ligitDescription: "轻量好用的手电筒工具，界面干净直接。",
-        ligitDescription_title: "Ligit 手电筒",
-        aipromptDescription: "为 AI 工作流提供提示词灵感与写作辅助。",
-        aipromptDescription_title: "AI 提示词宝典",
-        zenpomoDescription: "帮助你平静进入节奏的番茄钟专注应用。",
-        zenpomoDescription_title: "禅番茄",
-        openAppStore: "前往 App Store",
-        htmlLang: "zh-CN",
-        langToggle: "EN",
-        otherApps: "Softminilabs 的其他应用",
-        backToShowcase: "← 返回精选应用大厅"
-    }
-};
-
+// 语言切换：只改 <html lang>，中英文内容的显隐由 CSS 的 [data-lang] 规则完成
 document.addEventListener("DOMContentLoaded", () => {
-    const languageButton = document.querySelector("[data-language-toggle]");
-    const translatableNodes = document.querySelectorAll("[data-i18n]");
+    const button = document.querySelector("[data-language-toggle]");
+    const root = document.documentElement;
 
-    function applyLanguage(language) {
-        const locale = translations[language] || translations.en;
-        document.documentElement.lang = locale.htmlLang;
-        translatableNodes.forEach((node) => {
-            const key = node.dataset.i18n;
-            if (locale[key]) {
-                node.textContent = locale[key];
-            }
-        });
-
-        // Dual-Language Screenshot swap logic
-        const i18nImages = document.querySelectorAll("[data-i18n-src-en]");
-        i18nImages.forEach(img => {
-            if (language === "zh" && img.dataset.i18nSrcZh) {
-                img.src = img.dataset.i18nSrcZh;
-            } else {
-                img.src = img.dataset.i18nSrcEn;
-            }
-        });
-
-        // Dual-Language Content Block swap logic
-        const enBlocks = document.querySelectorAll("[data-i18n-content='en']");
-        const zhBlocks = document.querySelectorAll("[data-i18n-content='zh']");
-        if (language === "zh") {
-            enBlocks.forEach(el => el.style.display = "none");
-            zhBlocks.forEach(el => el.style.display = "block");
-        } else {
-            enBlocks.forEach(el => el.style.display = "block");
-            zhBlocks.forEach(el => el.style.display = "none");
-        }
-
-        if (languageButton) {
-            languageButton.textContent = locale.langToggle;
-        }
-        localStorage.setItem("Softminilabs-language", language);
+    function apply(language) {
+        root.lang = language === "zh" ? "zh-CN" : "en";
+        if (button) button.textContent = language === "zh" ? "EN" : "中文";
+        try { localStorage.setItem("Softminilabs-language", language); } catch (e) {}
     }
 
-    const savedLanguage = localStorage.getItem("Softminilabs-language");
-    const browserPrefersZh = (navigator.language || "").toLowerCase().startsWith("zh");
-    const initialLanguage = savedLanguage ? savedLanguage : (browserPrefersZh ? "zh" : "en");
-    applyLanguage(initialLanguage);
+    apply(root.lang === "en" ? "en" : "zh");
 
-    if (languageButton) {
-        languageButton.addEventListener("click", () => {
-            const nextLanguage = document.documentElement.lang === "zh-CN" ? "en" : "zh";
-            applyLanguage(nextLanguage);
+    if (button) {
+        button.addEventListener("click", () => {
+            apply(root.lang === "zh-CN" ? "en" : "zh");
         });
     }
 });

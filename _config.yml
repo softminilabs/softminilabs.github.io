@@ -15,9 +15,9 @@
 # in the templates via {{ site.myvariable }}.
 title: Softminilabs
 email: 
-description: 
+description: Softminilabs，独立 iOS 工作室，认真打磨的 iPhone、iPad 与 Mac 小工具。
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://softminilabs.github.io"
 twitter_username: 
 github_username:  
 
@@ -28,6 +28,13 @@ remote_theme: riggraz/no-style-please
 
 plugins:
   - jekyll-feed
+
+exclude:
+  - tools
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

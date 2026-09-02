@@ -1,142 +1,173 @@
-/* CSS specific for the app detail pages */
-.app-detail-hero {
+/* 应用详情页 */
+.app-hero {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.app-back {
+    display: inline-block;
+    color: var(--stone);
+    text-decoration: none;
+    font-size: 0.92rem;
+    letter-spacing: 0.04em;
+}
+.app-back:hover { color: var(--vermilion); }
+
+.app-hero-inner {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    padding: 20px 20px 60px;
-    margin-top: 0;
+    margin-top: 40px;
 }
+.app-hero-inner .section-label { margin-bottom: 10px; }
+.app-hero-inner .section-label::before { display: none; }
 
-.app-detail-icon {
+.app-hero-icon {
     width: 120px;
     height: 120px;
     border-radius: 28px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-    margin-bottom: 24px;
+    border: 1px solid var(--line);
+    box-shadow: 0 16px 40px rgba(28, 27, 24, 0.14);
+    margin-bottom: 26px;
 }
 
-.app-detail-hero h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 16px;
-    color: #111;
+.app-hero h1 {
+    font-size: clamp(2.2rem, 4.6vw, 3.4rem);
+    line-height: 1.1;
+}
+.app-hero h1 small {
+    display: block;
+    margin-top: 8px;
+    font-family: Charter, Georgia, serif;
+    font-style: italic;
+    font-size: 0.42em;
+    letter-spacing: 0.02em;
+    color: var(--stone);
 }
 
-.app-detail-description {
-    font-size: 1.25rem;
-    color: #555;
-    max-width: 600px;
-    margin: 0 auto 24px;
-    line-height: 1.6;
-}
-
-.app-action-area {
-    margin-bottom: 64px;
-}
-
-.download-badge {
-    display: inline-block;
-    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s ease;
-}
-
-.download-badge:hover {
-    transform: scale(1.05);
-    opacity: 0.95;
-}
-
-.download-badge:active {
-    transform: scale(0.97);
-    opacity: 0.9;
-}
-
-.app-screenshots {
-    display: flex;
-    gap: 32px;
-    justify-content: center;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    width: 100%;
-}
-
-.app-screenshot, .screenshot-placeholder {
-    width: 250px;
-    max-width: 100%;
-    height: auto;
-    aspect-ratio: 250 / 541; /* Approximate iOS App Store ratio */
-    border-radius: 36px;
-    box-shadow: 0 12px 36px rgba(0,0,0,0.06);
-    object-fit: contain;
-    background-color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #aaa;
-    font-weight: 500;
-}
-
-.cross-promote {
-    text-align: center;
-    padding: 80px 20px;
-    border-top: 1px solid rgba(0,0,0,0.05);
-    margin-top: 40px;
-}
-
-.cross-promote h3 {
-    margin-bottom: 24px;
+.app-hero-tagline {
+    max-width: 34rem;
+    margin-top: 18px;
     font-size: 1.2rem;
-    color: #666;
+    color: var(--ink-2);
 }
 
-.back-home-button {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: #333;
-    color: #fff;
-    border-radius: 100px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: transform 0.2s ease, background-color 0.2s ease;
+.app-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 30px;
 }
 
-.back-home-button:hover {
-    background-color: #111;
-    transform: translateY(-2px);
+/* 横幅：Mac 截图自带渐变底，只加一圈细边和阴影 */
+.app-wide {
+    margin-top: 64px;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    box-shadow: 0 30px 70px rgba(28, 27, 24, 0.14);
+}
+.app-wide img { width: 100%; }
+.app-wide + .app-shots { margin-top: 28px; }
+
+.app-shots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 28px;
+    margin-top: 64px;
+}
+.app-shot {
+    width: 300px;
+    max-width: 100%;
+    border-radius: 30px;
+    border: 1px solid var(--line);
+    box-shadow: 0 24px 60px rgba(28, 27, 24, 0.12);
+    background: var(--paper-2);
 }
 
-/* --- Rich Text Markdown Slot --- */
-.app-rich-content {
+/* ---------- 正文 ---------- */
+.app-content {
     max-width: 720px;
-    margin: 40px auto 60px;
-    padding: 0 20px;
-    text-align: left;
-    color: #4a4a4a;
-    line-height: 1.8;
-    font-size: 1.1rem;
+    margin: 80px auto 0;
+    padding-top: 56px;
+    border-top: 1px solid var(--line);
+    color: var(--ink-2);
 }
-
-.app-rich-content h2, .app-rich-content h3 {
-    color: #111;
-    margin-top: 40px;
-    margin-bottom: 16px;
-    font-weight: 700;
+.app-content h2 {
+    font-size: 1.7rem;
+    color: var(--ink);
+    margin-bottom: 20px;
 }
-
-.app-rich-content p, .app-rich-content ul {
-    margin-bottom: 24px;
+.app-content h3 {
+    font-size: 1.15rem;
+    color: var(--ink);
+    margin: 40px 0 10px;
+    padding-left: 14px;
+    border-left: 2px solid var(--vermilion);
+    line-height: 1.4;
 }
-
-.app-rich-content ul {
-    padding-left: 24px;
+.app-content p { margin-bottom: 16px; }
+.app-content ul { padding-left: 1.3rem; margin-bottom: 16px; }
+.app-content li { margin-bottom: 6px; }
+.app-content li::marker { color: var(--vermilion); }
+.app-content blockquote {
+    margin: 28px 0;
+    padding: 4px 0 4px 20px;
+    border-left: 2px solid var(--vermilion);
+    color: var(--ink);
+    font-size: 1.12rem;
 }
+.app-content a { color: var(--vermilion); text-decoration: none; border-bottom: 1px solid rgba(168, 70, 47, 0.35); }
+.app-content a:hover { border-bottom-color: var(--vermilion); }
 
-.app-rich-content a {
-    color: #007aff;
+/* ---------- 其他作品 ---------- */
+.app-others {
+    max-width: 880px;
+    margin: 88px auto 0;
+    padding-top: 40px;
+    border-top: 1px solid var(--line);
+}
+.others-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 22px;
+    margin-top: 20px;
+}
+.other-app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 76px;
     text-decoration: none;
-    border-bottom: 1px solid rgba(0, 122, 255, 0.3);
-    transition: border-color 0.2s ease;
+    color: var(--ink-2);
+    font-size: 0.8rem;
+    line-height: 1.3;
+    text-align: center;
+    transition: transform 0.2s ease, color 0.2s ease;
 }
+.other-app img {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    border: 1px solid var(--line-faint);
+    box-shadow: 0 6px 16px rgba(28, 27, 24, 0.10);
+}
+.other-app:hover { transform: translateY(-3px); color: var(--vermilion); }
 
-.app-rich-content a:hover {
-    border-bottom-color: #007aff;
+@media (max-width: 640px) {
+    .app-hero { margin-top: 24px; }
+    .app-hero-inner { margin-top: 28px; }
+    .app-hero-icon { width: 96px; height: 96px; border-radius: 22px; }
+    .app-hero-tagline { font-size: 1.05rem; }
+    .app-wide { margin-top: 40px; border-radius: 14px; }
+    .app-shots { gap: 14px; margin-top: 44px; }
+    .app-shot { width: calc(50% - 7px); border-radius: 18px; }
+    .app-content { margin-top: 56px; padding-top: 40px; }
+    .app-content h2 { font-size: 1.45rem; }
+    .app-others { margin-top: 56px; }
+    .other-app { width: 64px; }
+    .other-app img { width: 52px; height: 52px; }
 }

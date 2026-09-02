@@ -1,57 +1,75 @@
 ---
 layout: default
 ---
+{% assign app = site.data.apps | where: "id", page.app_id | first %}
 
-<article class="app-detail-hero">
-    <div class="app-hero-content">
-        <img src="/{{ page.icon }}" alt="{{ page.title }} App Icon" class="app-detail-icon">
-        <h1 data-i18n="{{ page.i18n_desc_key }}_title">{{ page.title }}</h1>
-        <p class="app-detail-description" data-i18n="{{ page.i18n_desc_key }}">{{ page.description }}</p>
-        
-        <div class="app-action-area">
-            <a href="https://apps.apple.com/app/id{{ page.app_store_id }}" class="download-badge">
-                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us" alt="Download on the App Store" style="height: 48px; width: auto;">
+<article class="app-hero">
+    <a href="/#apps" class="app-back"><span data-lang="zh">← 全部作品</span><span data-lang="en">← All apps</span></a>
+    <div class="app-hero-inner">
+        <img src="/{{ page.icon }}" alt="{{ app.name_zh }} 图标" class="app-hero-icon" width="120" height="120">
+        <p class="section-label"><span data-lang="zh">{{ app.category_zh }}</span><span data-lang="en">{{ app.category_en }}</span></p>
+        <h1>
+            <span data-lang="zh">{{ app.name_zh }}<small>{{ app.name_en }}</small></span>
+            <span data-lang="en">{{ app.name_en }}<small>{{ app.name_zh }}</small></span>
+        </h1>
+        <p class="app-hero-tagline">
+            <span data-lang="zh">{{ app.tagline_zh }}</span>
+            <span data-lang="en">{{ app.tagline_en }}</span>
+        </p>
+        <div class="app-hero-actions">
+            <a href="https://apps.apple.com/cn/app/id{{ page.app_store_id }}" class="download-badge" data-lang="zh">
+                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/zh-cn" alt="在 App Store 下载" height="48">
+            </a>
+            <a href="https://apps.apple.com/app/id{{ page.app_store_id }}" class="download-badge" data-lang="en">
+                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us" alt="Download on the App Store" height="48">
             </a>
         </div>
     </div>
 
-    <!-- Screenshots area -->
-    <div class="app-screenshots">
-        {% if page.screenshots_en %}
-            {% for shot_en in page.screenshots_en %}
-                {% assign index = forloop.index0 %}
-                {% assign shot_zh = page.screenshots_zh[index] %}
-                <img src="/{{ shot_en }}" class="app-screenshot" data-i18n-src-en="/{{ shot_en }}" data-i18n-src-zh="/{{ shot_zh }}" alt="{{ page.title }} screenshot" loading="lazy">
-            {% endfor %}
-        {% else %}
-            <!-- Generic placeholders matching #F6F1E8 style -->
-            <div class="screenshot-placeholder">Screenshot Space</div>
-            <div class="screenshot-placeholder">Screenshot Space</div>
-        {% endif %}
+    {% if page.wide_zh %}
+    <div class="app-wide">
+        <img src="/{{ page.wide_zh }}" alt="{{ app.name_zh }} Mac 截图" data-lang="zh" width="1800" height="1125">
+        <img src="/{{ page.wide_en }}" alt="{{ app.name_en }} Mac screenshot" data-lang="en" width="1800" height="1125">
+    </div>
+    {% endif %}
+
+    <div class="app-shots">
+        {% for shot in page.screenshots_zh %}
+        <img src="/{{ shot }}" class="app-shot" alt="{{ app.name_zh }} 截图 {{ forloop.index }}" data-lang="zh" loading="lazy" width="750" height="1622">
+        {% endfor %}
+        {% for shot in page.screenshots_en %}
+        <img src="/{{ shot }}" class="app-shot" alt="{{ app.name_en }} screenshot {{ forloop.index }}" data-lang="en" loading="lazy" width="750" height="1622">
+        {% endfor %}
     </div>
 </article>
 
-<!-- Dynamic Rich Text Markdown Slot for Deep SEO -->
-<section class="app-rich-content">
+<section class="app-content">
     {{ content }}
 </section>
 
-<section class="cross-promote">
-    <h3 data-i18n="otherApps">Other apps from Softminilabs</h3>
-    <a href="/" class="back-home-button" data-i18n="backToShowcase">← Back to Showcase</a>
+<section class="app-others" aria-labelledby="others-title">
+    <p class="section-label"><span data-lang="zh">其他作品</span><span data-lang="en">More from Softminilabs</span></p>
+    <div class="others-row">
+        {% for other in site.data.apps %}{% if other.id != page.app_id %}
+        <a href="/{{ other.id }}.html" class="other-app" title="{{ other.name_zh }} · {{ other.name_en }}">
+            <img src="/{{ other.icon }}" alt="" width="56" height="56" loading="lazy">
+            <span data-lang="zh">{{ other.name_zh }}</span>
+            <span data-lang="en">{{ other.name_en }}</span>
+        </a>
+        {% endif %}{% endfor %}
+    </div>
 </section>
 
-<!-- Inject specific SoftwareApplication JSON-LD -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "{{ page.title }}",
+  "name": "{{ app.name_zh }}",
+  "alternateName": "{{ app.name_en }}",
   "operatingSystem": "iOS",
-  "applicationCategory": "UtilitiesApplication",
-  "offers": {
-    "@type": "Offer",
-    "price": "0"
-  }
+  "applicationCategory": "{{ app.category_en | replace: ' & ', '' | replace: ' ', '' }}Application",
+  "author": { "@type": "Organization", "name": "Softminilabs" },
+  "image": "https://softminilabs.github.io/{{ page.icon }}",
+  "installUrl": "https://apps.apple.com/app/id{{ page.app_store_id }}"
 }
 </script>

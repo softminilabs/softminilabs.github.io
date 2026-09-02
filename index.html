@@ -1,26 +1,62 @@
 ---
 layout: default
-title: "Apps"
+title: "Softminilabs"
 ---
 
-<section class="hero" aria-labelledby="hero-title">
-    <p class="hero-kicker" data-i18n="heroKicker">Independent iPhone Utilities</p>
-    <h1 id="hero-title" data-i18n="heroTitle">Small apps, carefully made for daily use.</h1>
-    <p class="hero-description" data-i18n="heroDescription">Softminilabs builds focused tools for scanning, counting, prompting, lighting, and staying in flow. Each app keeps the interface simple and the purpose clear.</p>
+{% assign hero_art = site.static_files | where: "path", "/assets/images/hero-ink.webp" | first %}
+{% unless hero_art %}{% assign hero_art = site.static_files | where: "path", "/assets/images/hero-ink.png" | first %}{% endunless %}
+<!-- 放一张 assets/images/hero-ink.webp（或 .png）到仓库，右侧插画位自动出现 -->
+<section class="hero{% if hero_art %} hero--with-art{% endif %}" aria-label="Softminilabs">
+    <div class="hero-copy">
+        <h1 class="hero-tagline">
+            <span data-lang="zh">Softminilabs 是一间独立 iOS 工作室。二维码、计数、专注、白噪音、纪念日、订阅、时间进度——每一件都只做好一件事，界面安静，目的清楚。</span>
+            <span data-lang="en">Softminilabs is an independent iOS studio. QR codes, counting, focus, sleep sounds, anniversaries, subscriptions and time progress — each app does one thing well, with a quiet interface and a clear purpose.</span>
+        </h1>
+        <ul class="hero-trust" aria-label="工作室概况">
+            <li><span data-lang="zh">{{ site.data.apps | size }} 款应用</span><span data-lang="en">{{ site.data.apps | size }} apps</span></li>
+            <li>iPhone · iPad · Mac</li>
+            <li><span data-lang="zh">中英双语</span><span data-lang="en">Chinese &amp; English</span></li>
+            <li><span data-lang="zh">2022 年至今</span><span data-lang="en">Since 2022</span></li>
+        </ul>
+        <div class="hero-actions">
+            <a href="#apps" class="btn btn-primary"><span data-lang="zh">看看作品</span><span data-lang="en">Browse the apps</span></a>
+            <a href="/sundial.html" class="btn btn-secondary"><span data-lang="zh">新作「岁时」</span><span data-lang="en">New: Sundial</span></a>
+        </div>
+    </div>
+
+    {% if hero_art %}
+    <div class="hero-art">
+        <img src="{{ hero_art.path }}" alt="" width="1672" height="941" fetchpriority="high">
+    </div>
+    {% endif %}
 </section>
 
-<section class="apps-section" aria-labelledby="apps-title">
-    <div class="section-heading">
-        <h2 id="apps-title" data-i18n="appsTitle">Apps</h2>
-    </div>
+
+
+<section class="apps-section" id="apps" aria-labelledby="apps-title">
+    <h2 id="apps-title"><span data-lang="zh">作品</span><span data-lang="en">Apps</span></h2>
 
     <div class="app-grid">
         {% for app in site.data.apps %}
-        <a href="/{{ app.id }}.html" class="app-item">
-            <img src="/{{ app.icon }}" alt="{{ app.name }} app icon">
-            <p class="app-title" data-i18n="{{ app.i18n_desc_key }}_title">{{ app.name }}</p>
-            <p class="app-description" data-i18n="{{ app.i18n_desc_key }}"></p>
-            <span class="app-cta" data-i18n="openAppStore">Open App Store</span>
+        <a href="/{{ app.id }}.html" class="app-card">
+            <img src="/{{ app.icon }}" alt="" width="72" height="72" loading="lazy">
+            <div class="app-card-body">
+                <p class="app-name">
+                    <span data-lang="zh">{{ app.name_zh }}</span>
+                    <span data-lang="en">{{ app.name_en }}</span>
+                </p>
+                <p class="app-alt">
+                    <span data-lang="zh">{{ app.name_en }}</span>
+                    <span data-lang="en">{{ app.name_zh }}</span>
+                </p>
+                <p class="app-tagline">
+                    <span data-lang="zh">{{ app.tagline_zh }}</span>
+                    <span data-lang="en">{{ app.tagline_en }}</span>
+                </p>
+                <p class="app-meta">
+                    <span data-lang="zh">{{ app.category_zh }}</span><span data-lang="en">{{ app.category_en }}</span>
+                </p>
+            </div>
         </a>
         {% endfor %}
     </div>
