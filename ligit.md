@@ -1,24 +1,55 @@
 ---
 layout: app
-title: "Ligit"
-description: "A lightweight flashlight tool with a clean interface."
-icon: "assets/images/light.png"
+app_id: "ligit"
+title: "补光灯"
+title_en: "Colorful Light"
+description: "补光灯 Colorful Light：屏幕补光、手电与应援灯。多种预设光源与场景用灯，专注、放松、拍照、哄睡都有，内置倒计时自动关闭。"
+icon: "assets/images/icons/ligit.webp"
 app_store_id: "6738280307"
-i18n_desc_key: "ligitDescription"
-screenshots_en:
-  - "assets/images/screenshots/ligit_en_1.webp"
-  - "assets/images/screenshots/ligit_en_2.webp"
 screenshots_zh:
   - "assets/images/screenshots/ligit_zh_1.webp"
   - "assets/images/screenshots/ligit_zh_2.webp"
+screenshots_en:
+  - "assets/images/screenshots/ligit_en_1.webp"
+  - "assets/images/screenshots/ligit_en_2.webp"
 ---
 
-<div data-i18n-content="zh" style="display: none;" markdown="1">
-<h2>Overview</h2>
-<p>The inspiration comes from my own needs. When the baby is born, he is very noisy at night. He will stop crying when he sees the light at night. Then preset a soft light off and turn on the countdown. Because after the baby falls asleep, the parents may also fall asleep and forget to turn off the screen. With the countdown function, it is very convenient to save power.<br><br>A simple M3 design fill light flashlight software<br><br>Built-in a variety of lights for taking pictures<br><br>Preset light source types<br>Meet the lighting needs of different periods<br><br>Built-in a variety of scene lights<br>Focus, relax, take pictures, etc.<br><br>There is also a countdown function<br>Built-in 5 minutes, 30 minutes, 60 minutes, 2 hours countdown time, if the countdown is turned on, the app will automatically close the software after the countdown is completed<br><br>Listen to advice, give more suggestions and opinions, thank you for your comments!</p>
+<div data-lang="zh" markdown="1">
+## 一款简洁的补光灯与手电软件。
+
+灵感来源于自己的需求：宝宝刚出生，晚上很闹腾，看到光就不哭了。于是预设一个柔和的灯光，再配上倒计时——宝宝睡着后家长也可能睡着，倒计时到点自动关闭，省电又省心。
+
+### 多种光源
+
+- 内置多种拍照使用的灯光，满足不同时期的用光需求
+- 预设光源类型，一点即亮
+- 多种场景用灯：专注、放松、拍照、哄睡统统都有
+
+### 倒计时关闭
+
+内置 5 分钟、30 分钟、60 分钟、2 小时倒计时。倒计时开启后，到点自动关闭，不必担心忘记关屏。
+
+### 简洁设计
+
+Material 3 风格界面，没有多余的东西。听劝，欢迎多提建议和意见。
 </div>
 
-<div data-i18n-content="en" markdown="1">
-<h2>Overview</h2>
-<p>The inspiration comes from my own needs. When the baby is born, he is very noisy at night. He will stop crying when he sees the light at night. Then preset a soft light off and turn on the countdown. Because after the baby falls asleep, the parents may also fall asleep and forget to turn off the screen. With the countdown function, it is very convenient to save power.<br><br>A simple M3 design fill light flashlight software<br><br>Built-in a variety of lights for taking pictures<br><br>Preset light source types<br>Meet the lighting needs of different periods<br><br>Built-in a variety of scene lights<br>Focus, relax, take pictures, etc.<br><br>There is also a countdown function<br>Built-in 5 minutes, 30 minutes, 60 minutes, 2 hours countdown time, if the countdown is turned on, the app will automatically close the software after the countdown is completed<br><br>Listen to advice, give more suggestions and opinions, thank you for your comments!</p>
+<div data-lang="en" markdown="1">
+## A simple fill light and flashlight app.
+
+The inspiration came from home: a newborn who cried at night and calmed down when he saw light. So a soft preset light, plus a countdown — parents fall asleep too, and the screen should turn itself off.
+
+### Many light sources
+
+- Built-in lights for taking pictures, for every stage of a shoot
+- Preset light source types, one tap to switch on
+- Scene lights for focus, relaxing, photography and lulling a baby to sleep
+
+### Countdown off
+
+Built-in 5, 30, 60 minute and 2 hour timers. When the countdown ends, the app closes itself so you never leave the screen on by mistake.
+
+### Clean design
+
+A Material 3 style interface with nothing extra. Suggestions and feedback are always welcome.
 </div>
