@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://softminilabs.github.io/sitemap.xml
