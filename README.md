@@ -37,3 +37,8 @@ python3 tools/build_fonts.py
 bundle install
 bundle exec jekyll serve
 ```
+
+
+## 部署
+
+推送到 main 分支即自动发布。仓库 Settings → Pages 的 Source 必须是 Deploy from a branch（main / root），不要改成 GitHub Actions：仓库里没有工作流文件，改了之后推送不会触发构建。
