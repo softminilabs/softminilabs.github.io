@@ -1,0 +1,95 @@
+{% if page.lang == 'en' %}{% assign prefix = '/en' %}{% else %}{% assign prefix = '' %}{% endif %}
+{% assign hero_art = site.static_files | where: "path", "/assets/images/hero-ink.webp" | first %}
+{% unless hero_art %}{% assign hero_art = site.static_files | where: "path", "/assets/images/hero-ink.png" | first %}{% endunless %}
+<!-- 放一张 assets/images/hero-ink.webp（或 .png）到仓库，右侧插画位自动出现 -->
+<section class="hero{% if hero_art %} hero--with-art{% endif %}" aria-label="Softminilabs">
+    <div class="hero-copy">
+        <p class="hero-eyebrow"><span data-lang="zh">独立 iOS 工作室</span><span data-lang="en">INDEPENDENT iOS STUDIO</span></p>
+        <h1 class="hero-title">
+            <span data-lang="zh"><span class="line">只做好一件事的</span><br><span class="line">小工具。</span></span>
+            <span data-lang="en">Small apps that do one thing well.</span>
+        </h1>
+        <p class="hero-lead">
+            <span data-lang="zh">二维码、计数、专注、白噪音、纪念日、订阅、时间进度。界面安静，目的清楚。</span>
+            <span data-lang="en">QR codes, counting, focus, sleep sounds, anniversaries, subscriptions and time progress. Quiet interfaces, clear purpose.</span>
+        </p>
+        <ul class="hero-trust" aria-label="工作室概况">
+            <li><span data-lang="zh">{{ site.data.apps | size }} 款应用</span><span data-lang="en">{{ site.data.apps | size }} apps</span></li>
+            <li>iPhone · iPad · Mac</li>
+            <li><span data-lang="zh">中英双语</span><span data-lang="en">Chinese &amp; English</span></li>
+            <li><span data-lang="zh">2022 年至今</span><span data-lang="en">Since 2022</span></li>
+        </ul>
+    </div>
+
+    {% if hero_art %}
+    <div class="hero-art">
+        <img src="{{ hero_art.path }}" alt="" width="1672" height="941" fetchpriority="high">
+    </div>
+    {% endif %}
+</section>
+
+{% assign featured = site.data.apps | where: "id", "sundial" | first %}
+<section class="featured" aria-labelledby="featured-title">
+    <div>
+        <p class="section-label"><span data-lang="zh">新作</span><span data-lang="en">NEW</span></p>
+        <div class="featured-head">
+            <img src="/{{ featured.icon }}" alt="" width="64" height="64">
+            <h2 id="featured-title">
+                <span data-lang="zh">{{ featured.name_zh }}<small>{{ featured.name_en }}</small></span>
+                <span data-lang="en">{{ featured.name_en }}<small>{{ featured.name_zh }}</small></span>
+            </h2>
+        </div>
+        <p class="featured-tagline">
+            <span data-lang="zh">日晷不告诉你几点几分，它告诉你太阳到哪了。</span>
+            <span data-lang="en">A sundial does not tell you the time. It shows you where the sun is.</span>
+        </p>
+        <p class="featured-desc">
+            <span data-lang="zh">把今日、本周、本月、今年和一生切成看得见的格子，放到主屏幕、锁屏与 Mac 菜单栏上。</span>
+            <span data-lang="en">Today, this week, month, year and a lifetime, cut into cells you can see — on your Home Screen, Lock Screen and Mac menu bar.</span>
+        </p>
+        <ul class="platforms">{% assign platforms = featured.platforms | split: " · " %}{% for platform in platforms %}<li>{{ platform }}</li>{% endfor %}</ul>
+        <div class="featured-actions">
+            {% include app-store-badge.html id=featured.app_store_id coming_soon=featured.coming_soon %}
+            <a href="{{ prefix }}/{{ featured.id }}.html" class="text-link"><span data-lang="zh">了解更多 →</span><span data-lang="en">Learn more →</span></a>
+        </div>
+    </div>
+    <div class="featured-shot">
+        <img src="/assets/images/screenshots/sundial_mac_zh.webp" alt="{{ featured.name_zh }} Mac 截图" data-lang="zh" width="1800" height="1125" loading="lazy">
+        <img src="/assets/images/screenshots/sundial_mac_en.webp" alt="{{ featured.name_en }} Mac screenshot" data-lang="en" width="1800" height="1125" loading="lazy">
+    </div>
+</section>
+
+<section class="catalog" id="apps" aria-labelledby="apps-title">
+    <div class="catalog-head">
+        <h2 id="apps-title"><span data-lang="zh">全部作品</span><span data-lang="en">All apps</span><small>{{ site.data.apps | size }}</small></h2>
+        <div class="filters" data-filters>
+            <button type="button" data-filter="" aria-pressed="true"><span data-lang="zh">全部</span><span data-lang="en">All</span></button>
+            {% assign categories = site.data.apps | map: "category_en" | uniq %}
+            {% for category in categories %}{% assign sample = site.data.apps | where: "category_en", category | first %}
+            <button type="button" data-filter="{{ category }}" aria-pressed="false"><span data-lang="zh">{{ sample.category_zh }}</span><span data-lang="en">{{ category }}</span></button>
+            {% endfor %}
+        </div>
+    </div>
+
+    <ul class="app-list">
+        {% for app in site.data.apps %}
+        <li data-category="{{ app.category_en }}">
+            <a href="{{ prefix }}/{{ app.id }}.html" class="app-row">
+                <img src="/{{ app.icon }}" alt="" width="56" height="56" loading="lazy">
+                <div class="app-row-body">
+                    <p class="app-row-name">
+                        <span data-lang="zh">{{ app.name_zh }}{% if app.name_en != app.name_zh %}<small>{{ app.name_en }}</small>{% endif %}</span>
+                        <span data-lang="en">{{ app.name_en }}{% if app.name_en != app.name_zh %}<small>{{ app.name_zh }}</small>{% endif %}</span>
+                    </p>
+                    <p class="app-row-tagline">
+                        <span data-lang="zh">{{ app.tagline_zh }}</span>
+                        <span data-lang="en">{{ app.tagline_en }}</span>
+                    </p>
+                    <p class="app-row-meta"><span data-lang="zh">{{ app.category_zh }}</span><span data-lang="en">{{ app.category_en }}</span> · {{ app.platforms }}</p>
+                </div>
+                <span class="app-row-arrow" aria-hidden="true">→</span>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
