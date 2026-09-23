@@ -1,4 +1,4 @@
-/* 应用详情页 */
+/* 应用详情页：整页居中 */
 .app-hero {
     margin-top: 40px;
     text-align: center;
@@ -20,7 +20,9 @@
     margin-top: 40px;
 }
 .app-hero-inner .section-label { margin-bottom: 10px; }
-.app-hero-inner .section-label::before { display: none; }
+.app-hero-inner .section-label::before,
+.app-others .section-label::before { display: none; }
+.app-hero-inner .platforms { justify-content: center; }
 
 .app-hero-icon {
     width: 120px;
@@ -57,7 +59,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 12px;
-    margin-top: 30px;
+    margin-top: 28px;
 }
 
 /* 横幅：Mac 截图自带渐变底，只加一圈细边和阴影 */
@@ -126,12 +128,14 @@
 .app-others {
     max-width: 880px;
     margin: 88px auto 0;
+    text-align: center;
     padding-top: 40px;
     border-top: 1px solid var(--line);
 }
 .others-row {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 14px 22px;
     margin-top: 20px;
 }

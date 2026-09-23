@@ -6,8 +6,11 @@
   tagline_en: "See where you are in time."
   category_zh: "效率"
   category_en: "Productivity"
+  platforms: "iPhone · iPad · Mac"
   icon: "assets/images/icons/sundial.webp"
   app_store_id: "6807945181"
+  # 审核通过后删掉这一行
+  coming_soon: true
 
 - id: "mdqr"
   name_zh: "码上美"
@@ -16,6 +19,7 @@
   tagline_en: "QR codes you are proud to share."
   category_zh: "工具"
   category_en: "Utilities"
+  platforms: "iPhone"
   icon: "assets/images/icons/mdqr.webp"
   app_store_id: "6787645212"
 
@@ -26,6 +30,7 @@
   tagline_en: "Yell to blast your anger away."
   category_zh: "娱乐"
   category_en: "Entertainment"
+  platforms: "iPhone"
   icon: "assets/images/icons/ahhh.webp"
   app_store_id: "6791314222"
 
@@ -36,6 +41,7 @@
   tagline_en: "See every subscription. Stop overpaying."
   category_zh: "生活"
   category_en: "Lifestyle"
+  platforms: "iPhone · iPad"
   icon: "assets/images/icons/subli.webp"
   app_store_id: "6772902416"
 
@@ -46,6 +52,7 @@
   tagline_en: "A stack of screenshots, one seamless image."
   category_zh: "图形与设计"
   category_en: "Graphics & Design"
+  platforms: "iPhone"
   icon: "assets/images/icons/slong.webp"
   app_store_id: "6790084992"
 
@@ -56,6 +63,7 @@
   tagline_en: "Birthdays, anniversaries and the lunar calendar."
   category_zh: "生活"
   category_en: "Lifestyle"
+  platforms: "iPhone"
   icon: "assets/images/icons/dontforget.webp"
   app_store_id: "6772791871"
 
@@ -66,8 +74,11 @@
   tagline_en: "Turn your phone into a handheld LED marquee."
   category_zh: "娱乐"
   category_en: "Entertainment"
+  platforms: "iPhone"
   icon: "assets/images/icons/led.webp"
   app_store_id: "6765485195"
+  price_cny: "3"
+  price_usd: "0.99"
 
 - id: "lull"
   name_zh: "眠静"
@@ -76,6 +87,7 @@
   tagline_en: "62 ambient sounds for deep sleep and focus."
   category_zh: "健康健美"
   category_en: "Health & Fitness"
+  platforms: "iPhone"
   icon: "assets/images/icons/lull.webp"
   app_store_id: "6762201798"
 
@@ -86,6 +98,7 @@
   tagline_en: "A calm focus timer you can stick with."
   category_zh: "效率"
   category_en: "Productivity"
+  platforms: "iPhone"
   icon: "assets/images/icons/zenpomo.webp"
   app_store_id: "6760449411"
 
@@ -96,6 +109,7 @@
   tagline_en: "Fill light, torch and cheer light in one."
   category_zh: "工具"
   category_en: "Utilities"
+  platforms: "iPhone"
   icon: "assets/images/icons/ligit.webp"
   app_store_id: "6738280307"
 
@@ -106,6 +120,7 @@
   tagline_en: "Prompt ideas and writing support for AI."
   category_zh: "工具"
   category_en: "Utilities"
+  platforms: "iPhone"
   icon: "assets/images/icons/aiprompt.webp"
   app_store_id: "6447695834"
 
@@ -116,8 +131,11 @@
   tagline_en: "Tasbih, habits and tally in one tap."
   category_zh: "工具"
   category_en: "Utilities"
+  platforms: "iPhone"
   icon: "assets/images/icons/counter.webp"
   app_store_id: "6446799575"
+  price_cny: "6"
+  price_usd: "0.99"
 
 - id: "qrcode"
   name_zh: "二维码"
@@ -126,5 +144,6 @@
   tagline_en: "Generate, beautify and scan QR codes."
   category_zh: "工具"
   category_en: "Utilities"
+  platforms: "iPhone"
   icon: "assets/images/icons/qrcode.webp"
   app_store_id: "1620996505"

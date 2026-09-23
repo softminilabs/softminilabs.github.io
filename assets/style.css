@@ -151,6 +151,7 @@ small { font-weight: 400; }
     font-size: 0.82rem;
     font-weight: 600;
     letter-spacing: 0.08em;
+    text-decoration: none;
     cursor: pointer;
 }
 .lang-toggle:hover { color: var(--vermilion); }
@@ -187,11 +188,6 @@ small { font-weight: 400; }
     background: var(--vermilion);
 }
 
-.hero,
-.apps-section { margin-top: var(--section-gap); }
-
-.apps-section h2 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); }
-
 /* ---------- Hero：默认单栏，有插画时右侧出图 ---------- */
 .hero {
     margin-top: 72px;
@@ -203,16 +199,31 @@ small { font-weight: 400; }
     grid-template-columns: minmax(0, 1fr) minmax(320px, 1.25fr);
     gap: 24px;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 56px;
     padding: 0;
 }
+.hero-copy { position: relative; z-index: 1; }
 
-.hero-tagline {
-    max-width: 38rem;
-    font-size: 1.35rem;
-    font-weight: 400;
+.hero-eyebrow {
+    font-size: 0.9rem;
+    color: var(--vermilion);
+    letter-spacing: 0.18em;
+    margin-bottom: 22px;
+}
+.hero-title {
+    font-size: clamp(2.2rem, 4.4vw, 3.6rem);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+}
+html[lang="zh-CN"] .hero-title { letter-spacing: 0.02em; }
+/* 左栏窄，中文标题不固定断行会把「具。」单独挤到第三行 */
+.hero-title .line { white-space: nowrap; }
+.hero-lead {
+    max-width: 30rem;
+    margin-top: 24px;
+    font-size: 1.15rem;
     line-height: 1.8;
-    color: var(--ink);
+    color: var(--ink-2);
 }
 
 .hero-trust {
@@ -226,22 +237,66 @@ small { font-weight: 400; }
 }
 .hero-trust li + li::before { content: "·"; margin-right: 14px; color: var(--line); }
 
-.hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 12px;
-    margin-top: 36px;
-}
-
 /* 山向右一直铺到视口边缘（超出页面内容区的部分最多 240px），首屏随之变高 */
 .hero-art {
     width: calc(100% + clamp(0px, (100vw - var(--page-width)) / 2 + 32px, 240px));
-    margin-left: -18%;
     overflow: hidden;
     pointer-events: none;
 }
 .hero-art img { width: 100%; height: auto; margin-top: -6%; }
+
+/* ---------- 新作 ---------- */
+.featured {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.25fr);
+    gap: 48px;
+    align-items: center;
+    margin-top: 72px;
+    padding: 48px;
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    background: var(--paper-2);
+}
+.featured-head { display: flex; align-items: center; gap: 16px; }
+.featured-head img {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    border: 1px solid var(--line-faint);
+    box-shadow: 0 8px 20px rgba(28, 27, 24, 0.10);
+}
+.featured h2 { font-size: 2rem; }
+.featured h2 small {
+    display: block;
+    margin-top: 4px;
+    font-family: Charter, Georgia, serif;
+    font-style: italic;
+    font-size: 0.5em;
+    color: var(--stone);
+}
+.featured-tagline { margin-top: 24px; font-size: 1.3rem; line-height: 1.5; }
+.featured-desc { margin-top: 12px; font-size: 0.98rem; color: var(--ink-2); }
+.featured-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; margin-top: 28px; }
+.featured-shot {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    box-shadow: 0 30px 70px rgba(28, 27, 24, 0.14);
+}
+
+.platforms { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; list-style: none; }
+.platforms li {
+    padding: 2px 10px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-family: var(--ui);
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    color: var(--stone);
+}
+
+.text-link { color: var(--vermilion); text-decoration: none; font-size: 0.98rem; }
+.text-link:hover { text-decoration: underline; text-underline-offset: 4px; }
 
 /* ---------- 按钮 ---------- */
 .btn {
@@ -259,68 +314,103 @@ small { font-weight: 400; }
 }
 .btn-primary { background: var(--vermilion); border-color: var(--vermilion); color: var(--paper); }
 .btn-primary:hover { background: var(--vermilion-deep); border-color: var(--vermilion-deep); transform: translateY(-1px); }
-.btn-secondary { background: transparent; border-color: var(--vermilion); color: var(--vermilion); }
-.btn-secondary:hover { background: var(--vermilion); color: var(--paper); transform: translateY(-1px); }
 
 .download-badge { display: inline-block; transition: transform 0.2s ease; }
 .download-badge img { height: 46px; width: auto; }
 .download-badge:hover { transform: translateY(-2px); }
 
-/* ---------- 作品格 ---------- */
-.app-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 16px;
-    margin-top: 36px;
+.coming-soon {
+    display: inline-flex;
+    align-items: center;
+    min-height: 46px;
+    padding: 0 20px;
+    border: 1px dashed var(--vermilion);
+    border-radius: 10px;
+    color: var(--vermilion);
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
 }
 
-.app-card {
+/* ---------- 作品目录 ---------- */
+.catalog { margin-top: var(--section-gap); }
+.catalog-head {
     display: flex;
-    gap: 18px;
-    padding: 20px;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 20px;
+}
+.catalog-head h2 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); }
+.catalog-head h2 small { margin-left: 10px; font-size: 0.45em; color: var(--stone); }
+
+.filters { display: flex; flex-wrap: wrap; gap: 6px; }
+.filters button {
+    padding: 5px 14px;
     border: 1px solid var(--line);
-    border-radius: 20px;
-    background: var(--paper-2);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--ink-2);
+    font-family: var(--serif);
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.filters button:hover { border-color: var(--ink); }
+.filters button[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+
+.app-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 48px;
+    list-style: none;
+    border-top: 1px solid var(--ink);
+}
+.app-list li[hidden] { display: none; }
+.app-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line);
     text-decoration: none;
     color: var(--ink);
-    transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
 }
-.app-card:hover {
-    transform: translateY(-3px);
-    border-color: var(--ink);
-    box-shadow: 0 18px 40px rgba(28, 27, 24, 0.08);
-}
-.app-card img {
-    width: 72px;
-    height: 72px;
-    flex: 0 0 72px;
-    border-radius: 18px;
+.app-row img {
+    width: 56px;
+    height: 56px;
+    flex: 0 0 56px;
+    border-radius: 14px;
     border: 1px solid var(--line-faint);
-    box-shadow: 0 8px 20px rgba(28, 27, 24, 0.10);
+    box-shadow: 0 6px 16px rgba(28, 27, 24, 0.10);
+    transition: transform 0.22s ease;
 }
-.app-card-body { min-width: 0; }
-.app-name { font-size: 1.3rem; font-weight: 600; line-height: 1.25; }
-.app-alt {
+.app-row-body { flex: 1; min-width: 0; }
+.app-row-name { font-size: 1.12rem; font-weight: 600; line-height: 1.3; }
+.app-row-name small {
+    margin-left: 8px;
     font-family: Charter, Georgia, serif;
     font-style: italic;
-    font-size: 0.9rem;
+    font-size: 0.8em;
     color: var(--stone);
 }
-.app-tagline { margin-top: 8px; font-size: 0.95rem; line-height: 1.6; color: var(--ink-2); }
-.app-meta { margin-top: 10px; font-size: 0.8rem; letter-spacing: 0.06em; color: var(--vermilion); }
+.app-row-tagline { margin-top: 2px; font-size: 0.92rem; line-height: 1.55; color: var(--ink-2); }
+.app-row-meta { margin-top: 6px; font-family: var(--ui); font-size: 0.72rem; letter-spacing: 0.04em; color: var(--stone); }
+.app-row-arrow { color: var(--line); font-size: 1.2rem; transition: color 0.2s ease, transform 0.2s ease; }
+.app-row:hover img { transform: scale(1.05); }
+.app-row:hover .app-row-name > span { color: var(--vermilion); }
+.app-row:hover .app-row-arrow { color: var(--vermilion); transform: translateX(3px); }
 
 /* ---------- 页脚 ---------- */
 .site-footer {
     margin-top: var(--section-gap);
     padding: 40px 0 48px;
+    text-align: center;
 }
-.footer-brand { display: flex; gap: 16px; align-items: flex-start; }
-.footer-name { font-size: 1.1rem; font-weight: 600; }
-.footer-tagline { font-size: 0.92rem; color: var(--stone); }
-
 .footer-nav {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 8px 22px;
     margin-top: 24px;
 }
@@ -331,9 +421,6 @@ small { font-weight: 400; }
 }
 .footer-nav a:hover { color: var(--vermilion); text-decoration: underline; text-underline-offset: 4px; }
 .footer-copy { margin-top: 16px; font-size: 0.82rem; color: var(--stone); }
-
-/* 旧的隐私/条款页脚只有一个 .footer-nav */
-.site-footer > .footer-nav { justify-content: center; }
 
 /* ---------- 隐私政策 / 服务条款 ---------- */
 .privacy-content {
@@ -369,6 +456,8 @@ small { font-weight: 400; }
 /* ---------- 响应式 ---------- */
 @media (max-width: 900px) {
     :root { --section-gap: 72px; }
+    .featured { grid-template-columns: 1fr; gap: 32px; padding: 32px; }
+    .app-list { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 640px) {
@@ -380,14 +469,16 @@ small { font-weight: 400; }
     .logo-text { font-size: 1.05rem; }
 
     .hero { margin-top: 40px; padding-bottom: 56px; }
-    .hero-tagline { font-size: 1.1rem; }
-    .hero-actions .btn { width: 100%; }
-    .hero--with-art { grid-template-columns: 1fr; gap: 8px; }
-    .hero-art { width: 100%; margin-left: 0; }
+    .hero-lead { font-size: 1.02rem; }
+    .hero--with-art { grid-template-columns: 1fr; gap: 8px; margin-top: 40px; }
+    .hero-art { width: 100%; }
 
-    .app-grid { grid-template-columns: 1fr; gap: 12px; }
-    .app-card { padding: 16px; gap: 14px; }
-    .app-card img { width: 60px; height: 60px; flex-basis: 60px; border-radius: 15px; }
-    .app-name { font-size: 1.15rem; }
+    .featured { margin-top: 48px; padding: 24px; border-radius: 20px; }
+    .featured h2 { font-size: 1.6rem; }
+    .featured-tagline { font-size: 1.12rem; }
+
+    .app-row { gap: 14px; padding: 16px 0; }
+    .app-row img { width: 52px; height: 52px; flex-basis: 52px; }
+    .app-row-arrow { display: none; }
 
 }
