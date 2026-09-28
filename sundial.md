@@ -17,82 +17,102 @@ screenshots_en:
 ---
 
 <div data-lang="zh" markdown="1">
-## 日晷不告诉你几点几分，它告诉你太阳到哪了。
+## 日晷不告诉你几点几分，它告诉你太阳走到了哪。
 
-岁时也一样。它不做秒级倒数，不堆数字，只让你看见自己在这一天、这一年、这一生里站在哪个位置。
+岁时把今天、这周、这个月、今年，还有你的一生，画成一格一格的进度：已经过去的是墨色，此刻是一笔朱红，还没到的是浅灰。不用打开 App，抬眼看一下桌面，就知道自己走到了哪。
 
 ### 看得见的时间
 
-今日二十四格，本周七格，本月三十一格，本季三个月，今年十二格，农历年跟着节气走，一生按你设定的预期寿命画出来。每一格都是已过、当下、未至三种状态：已过是墨色，当下是一根赭红，未至是浅灰。一眼扫过去，不用读数。
+- 今日、本周、本月、本季、今年、农历年、一生，七种天然周期
+- 倒计时：从起点到目标日，看还剩多少
+- 正计时：从某一天开始，看已经走了多远
+- 概览：今日、本周、本月、今年四条放在一起
+- 一生：填上生日和预期寿命，一生画成一个个格子，跟今天用同一种画法。你在一天里的位置和在一生里的位置，一眼就能对上
 
-除了这些天然的周期，你还可以自己定义两种：
+### 放在每天都会看的地方
 
-- 倒计时：从起点到目标日，看剩多少
-- 正计时：从某一天开始，看已经过去多久
-- 还有一张概览，把今日、本周、本月、今年四条放在一起
+- 主屏幕小、中、大三种尺寸，iPad 上还有超大号
+- 锁屏圆形与矩形组件，倒计时可以直接放在锁屏上
+- iPad 横竖屏都适配
 
-### 活在桌面上
+### 在 Mac 上
 
-岁时主要活在小组件里，不需要打开 App。
+- 菜单栏常驻：画的是当前这一条，点开能看其它几条，点一下就换过去；显示成什么样可以在设置里挑
+- 桌面小组件：小、中、大、超大四种尺寸，也能放进通知中心
+- 主窗口是一张海报：左右翻看每一条，⌘N 新建、⌘E 编辑，存成图片或者分享出去
+- 登录时启动：开机后菜单栏那一格自己就在
 
-- 主屏幕支持小、中、大、超大四种尺寸
-- 锁屏支持圆形和矩形两种，倒计时直接放在锁屏上
-- iPad 同样可用，横竖屏都适配
-- Mac 版有独立的菜单栏图标，一天里瞥几十次的地方随时能看到进度
+### 29 款样式，57 套配色
 
-### 二十六款样式，五十七套配色
+竖条、细条、胶囊、阶梯、圆点、点阵屏、环、刻度环、水墨环、六边、时间轴、霓虹……还有松、竹、梅、叶、山、三叶草、月相、印章这些国风意象。从一根细线到一幅小画，都在同一套纸墨语言里。
 
-竖条、细条、胶囊、阶梯、圆点、点阵屏、环、水墨环、刻度环、松、竹、月相、叶、印章、纯文字……从极简的一根线，到带国风意象的松竹月相，都在同一套纸墨语言里。
+配色分通用、国风、夜、M3、对比五个系列，也能自己调底色和强调色。二十多款字体可选，图形的线条粗细和端点会跟着字体的气质走。
 
-配色分为通用、国风、夜、M3、对比五个系列，每一套都定义了已过、当下、未至三种颜色。也可以自己调，底色和强调色任选。
+### 大屏与分享
 
-### 自己的东西自己管
+点开任意一项就是整屏的大图：今年可以铺成 365 个点，一个点一天；本月的圆点可以排成一张月历。看到喜欢的样子，一键分享成图片。
 
-所有数据只存在本机和你自己的 iCloud 私有库里，开发者看不到，也不收集任何信息。iCloud 同步可以随时开关，换手机、重装，组件都还在。
+### 每月一号的年进度
+
+每月 1 号早上 9 点，一条不响铃的通知，附一张今年的进度卡片。设置里随时能看今年进度、分享出去，或者关掉提醒。
+
+### 自己的数据自己管
+
+所有数据只存在本机和你自己的 iCloud 私有库里，开发者看不到，也不收集任何信息。iCloud 同步随时可以开关，换手机、重装，组件都还在。
 
 ### 名字的由来
 
-> 岁，本指木星。古人看它十二年绕天一周，以它所在的位置纪年——年，最初是被看出来的，不是被数出来的。
-> 时，本义是四时。春夏秋冬，是一年被切开后的四个段落。
+> 岁，本指木星。古人看它十二年绕天一周，以它所在的位置纪年，年最初是被看出来的，不是被数出来的。
+> 时，本义是四时，一年里一段一段有名字、有位置的时间。
 
-南朝的《荆楚岁时记》按时序记下了一整年的节令风俗。在那本书里，一年不是三百六十五个等长的日子，而是一段一段有名字、有位置的时间。这就是岁时想做的事：把连续的时间切成看得见的段落，放在你一抬眼就能看到的地方。
+英文名 Sundial，日晷，人类最早把时间变成看得见的东西的工具。
 
-免费版可以创建三个组件，使用基础样式和配色。解锁岁时 Pro 后不限个数，全部样式、配色与 iCloud 同步都可用，一次购买，iPhone、iPad、Mac 三端通用。
+免费版可以创建三个组件，使用基础样式和全部配色。解锁岁时 Pro 后不限个数，全部样式与 iCloud 同步都可用，iPhone、iPad、Mac 三端通用。
 </div>
 
 <div data-lang="en" markdown="1">
 ## A sundial does not tell you the time. It shows you where the sun is.
 
-Sundial does the same for your day, your week, your year, and your life. No countdown clock, no ticking seconds. Just a row of marks, and a clear sense of where you are.
+Sundial draws your day, your week, your month, your year and your whole life as rows of marks: behind you in ink, right now in a single vermilion stroke, still ahead in light grey. No need to open the app. Glance at your Home Screen and you know where you stand.
 
 ### Time you can see
 
-Today is twenty-four marks. This week is seven. This month is thirty-one. This quarter is three months, this year is twelve, and the lunar year follows the solar terms. Your life is drawn from the life expectancy you choose. Every mark is in one of three states: behind you in ink, right now in a single vermilion stroke, still ahead in light grey.
+- Seven natural cycles: today, this week, this month, this quarter, this year, the lunar year and your lifetime
+- Countdown: from a start date to a target date, see what is left
+- Count up: from a date in the past, see how far you have come
+- Overview: today, this week, this month and this year side by side
+- Lifetime: enter your birthday and a life expectancy, and your life becomes a grid of marks, drawn exactly like your day. Where you are in the day and where you are in your life line up at a glance
 
-Beyond the natural cycles, you can define your own:
+### Where you look every day
 
-- Countdown, from a start date to a target date, showing what is left
-- Count up, from a date in the past, showing how far you have come
-- An overview that puts today, this week, this month and this year side by side
-
-### Built for the Home Screen
-
-Sundial lives in widgets, so you rarely need to open the app.
-
-- Home Screen widgets in small, medium, large and extra large
-- Lock Screen widgets in circular and rectangular, so a countdown sits right on your Lock Screen
+- Home Screen widgets in small, medium and large, plus extra large on iPad
+- Lock Screen widgets in circular and rectangular, so a countdown can sit right on your Lock Screen
 - Full iPad support in both orientations
-- On Mac, a menu bar icon shows your progress in the place you glance at dozens of times a day
 
-### Twenty-six styles, fifty-seven palettes
+### On your Mac
 
-Bars, hairlines, capsules, stairs, dots, dot matrix, rings, ink ring, tick ring, pine, bamboo, moon phase, leaf, seal and plain text. From a single hairline to motifs drawn from Chinese ink painting, all in the same paper-and-ink language.
+- Always in the menu bar: the current item, with the others one click away. Choose how much it shows in Settings
+- Desktop widgets in small, medium, large and extra large, and in Notification Center too
+- A poster window: flip through your items, ⌘N to create, ⌘E to edit, save as an image or share
+- Launch at login, so the menu bar item is there when you start your Mac
 
-Palettes are grouped into Universal, Chinese, Night, Material and Contrast. Each defines the three states of past, present and future. Or build your own from any background and accent colour.
+### 29 styles, 57 palettes
+
+Bars, thin bars, capsules, stairs, dots, dot matrix, ring, tick ring, ink ring, hexagons, timeline, neon, and motifs from Chinese ink painting: pine, bamboo, plum, leaf, mountains, clover, moon phase and seal. From a single hairline to a small painting, all in the same paper and ink language.
+
+Palettes come in Universal, Chinese, Night, Material and Contrast, or build your own from any background and accent colour. Over twenty typefaces, and the figures follow them: stroke weight and line ends match the character of the font.
+
+### Full screen and sharing
+
+Open any item for a full screen view: this year as 365 dots, one for each day, or this month as a calendar of dots. Share any of them as an image.
+
+### Year progress on the first of each month
+
+At 9 AM on the first of each month, a silent notification with a card of the year so far. Check this year's progress in Settings any time, share it, or turn the reminder off.
 
 ### Your data stays yours
 
-Everything is stored on your device and in your own private iCloud database. The developer never sees it and collects nothing. iCloud sync can be turned on or off at any time.
+Everything is stored on your device and in your own private iCloud database. The developer never sees it and collects nothing. iCloud sync can be turned on or off at any time. Switch phones or reinstall, and your widgets are still there.
 
 ### Why a sundial
 
@@ -100,5 +120,5 @@ Everything is stored on your device and in your own private iCloud database. The
 
 You glance at where the shadow falls, and you know where you stand in the day. That is the whole idea behind this app. Some marks are behind you, one is now, the rest are still ahead.
 
-The free version lets you create three widgets with the basic styles and palettes. Sundial Pro removes the limit and unlocks every style, every palette and iCloud sync. One purchase covers iPhone, iPad and Mac.
+The free version lets you create three widgets with the basic styles and every palette. Sundial Pro removes the limit and unlocks every style and iCloud sync, on iPhone, iPad and Mac.
 </div>

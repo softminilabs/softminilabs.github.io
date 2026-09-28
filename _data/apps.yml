@@ -9,8 +9,6 @@
   platforms: "iPhone · iPad · Mac"
   icon: "assets/images/icons/sundial.webp"
   app_store_id: "6807945181"
-  # 审核通过后删掉这一行
-  coming_soon: true
 
 - id: "mdqr"
   name_zh: "码上美"
