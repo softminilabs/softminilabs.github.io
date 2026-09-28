@@ -82,6 +82,115 @@
                     <li data-i18n="securityItem1">本应用帐号均有安全保护功能，请妥善保管您的用户名及密码信息。本应用将通过对用户密码进行加密等安全措施确保您的信息不丢失，不被滥用和变造。尽管有前述安全措施，但同时也请您注意在信息网络上不存在“完善的安全措施”。</li>
                     <li data-i18n="securityItem2">在使用本应用网络服务进行网上交易时，您不可避免的要向交易对方或潜在的交易对方披露自己的个人信息，如联络方式或者邮政地址。请您妥善保护自己的个人信息，仅在必要的情形下向他人提供。如您发现自己的个人信息泄密，尤其是本应用用户名及密码发生泄露，请您立即联络本应用客服，以便本应用采取相应措施。</li>
                 </ul>
+
+                <!-- 专项说明里有加粗，data-i18n 用 textContent 替换会把标签抹掉，所以中英文各写一整块，显隐交给 style.css 的 [data-lang] 规则 -->
+                <section id="pipstrip">
+                    <div data-lang="zh">
+                        <h2>7. 皮皮旅行隐私政策</h2>
+                        <p>本节只适用于皮皮旅行；与上文通用条款不一致的地方，以本节为准。</p>
+                        <p>生效日期：2026 年 9 月 28 日</p>
+                        <p>皮皮旅行（以下称「本 App」）是一款走路游戏：你走的步数带着小企鹅皮皮环游世界。我们尽量少碰你的数据，下面说清楚本 App 用到哪些信息、怎么用。</p>
+
+                        <h3>7.1 健康数据（步数）</h3>
+                        <ul>
+                            <li>经你同意后，本 App 从 Apple「健康」读取<strong>步数</strong>这一种数据，不读取其他任何健康数据，也不向「健康」写入任何内容。</li>
+                            <li>步数只用来计算游戏进度（皮皮走了多远、何时寄回明信片），<strong>只在你的设备上计算</strong>。</li>
+                            <li>步数<strong>不会上传</strong>到任何服务器，<strong>不会存进 iCloud</strong>，不会分享给任何第三方，不会用于广告或营销。</li>
+                            <li>你在「健康」里手动录入的步数不计入游戏。</li>
+                            <li>你可以随时在「健康」App（右上角头像 → 隐私 → App → 皮皮旅行）或「设置 → 隐私与安全性 → 健康」里关闭读取权限。</li>
+                        </ul>
+
+                        <h3>7.2 游戏进度与 iCloud</h3>
+                        <ul>
+                            <li>你的旅程、贴纸、明信片、设置和已购内容，保存在你的设备上；如果你登录了 iCloud，还会同步到你自己的 iCloud 私有数据库，方便换手机后恢复。</li>
+                            <li>iCloud 私有数据库只有你自己能访问，我们看不到。里面不包含任何健康数据。</li>
+                        </ul>
+
+                        <h3>7.3 购买</h3>
+                        <ul>
+                            <li>App 内购买由 Apple 处理，我们拿不到你的付款信息。本 App 只在设备上读取你已购买的内容，用来解锁地图、贴纸等。</li>
+                        </ul>
+
+                        <h3>7.4 通知</h3>
+                        <ul>
+                            <li>经你同意后，本 App 在皮皮寄信回家或到达目的地时发送本地通知。通知在设备上生成，不经过我们的服务器。</li>
+                        </ul>
+
+                        <h3>7.5 小组件与 iMessage 扩展</h3>
+                        <ul>
+                            <li>首页小组件和 iMessage 贴纸扩展通过设备上的共享存储读取游戏进度和已收集的贴纸，这些数据不离开你的设备。</li>
+                        </ul>
+
+                        <h3>7.6 我们不收集的信息</h3>
+                        <ul>
+                            <li>本 App 不需要注册账号，不收集姓名、邮箱、位置、通讯录等个人信息。</li>
+                            <li>本 App 没有接入任何统计、广告或崩溃分析的第三方服务，不追踪你。</li>
+                            <li>「家乡」来自手机的地区设置或你的手动选择，只用于计算旅程远近，保存在设备和你的 iCloud 里，不使用定位。</li>
+                        </ul>
+
+                        <h3>7.7 儿童</h3>
+                        <p>本 App 适合所有年龄，不专门收集儿童的任何信息。</p>
+
+                        <h3>7.8 变更</h3>
+                        <p>本政策如有变更，会更新本页面和生效日期。</p>
+
+                        <h3>7.9 联系我们</h3>
+                        <p>如有疑问，请发邮件至：<a href="mailto:karepbq@gmail.com">karepbq@gmail.com</a></p>
+                    </div>
+
+                    <div data-lang="en">
+                        <h2>7. Pip's Trip Privacy Policy</h2>
+                        <p>This section applies to Pip's Trip only. Where it differs from the general terms above, this section prevails.</p>
+                        <p>Effective date: September 28, 2026</p>
+                        <p>Pip's Trip ("the app") is a walking game: the steps you walk carry a little penguin, Pip, around the world. We touch as little of your data as possible. Here is exactly what the app uses and how.</p>
+
+                        <h3>7.1 Health data (steps)</h3>
+                        <ul>
+                            <li>With your permission, the app reads one type of data from Apple Health: <strong>Step Count</strong>. It reads no other health data and never writes to Health.</li>
+                            <li>Steps are used only to calculate game progress (how far Pip has walked and when postcards are mailed), and are <strong>processed only on your device</strong>.</li>
+                            <li>Steps are <strong>never uploaded</strong> to any server, <strong>never stored in iCloud</strong>, never shared with third parties, and never used for advertising or marketing.</li>
+                            <li>Steps you enter into Health manually are not counted in the game.</li>
+                            <li>You can turn off access at any time in the Health app (your photo at the top right → Privacy → Apps → Pip's Trip) or in Settings → Privacy &amp; Security → Health.</li>
+                        </ul>
+
+                        <h3>7.2 Game progress and iCloud</h3>
+                        <ul>
+                            <li>Your trips, stickers, postcards, settings and purchases are saved on your device and, if you are signed in to iCloud, synced to your own private iCloud database so they come back on a new phone.</li>
+                            <li>Only you can access your private iCloud database. We cannot see it. It contains no health data.</li>
+                        </ul>
+
+                        <h3>7.3 Purchases</h3>
+                        <ul>
+                            <li>In-app purchases are handled by Apple. We never receive your payment details. The app only checks your purchases on the device to unlock maps and stickers.</li>
+                        </ul>
+
+                        <h3>7.4 Notifications</h3>
+                        <ul>
+                            <li>With your permission, the app sends local notifications when Pip mails something home or arrives. They are created on your device and never pass through our servers.</li>
+                        </ul>
+
+                        <h3>7.5 Widget and iMessage extension</h3>
+                        <ul>
+                            <li>The Home Screen widget and the iMessage sticker extension read game progress and collected stickers from shared storage on your device. This data does not leave your device.</li>
+                        </ul>
+
+                        <h3>7.6 What we don't collect</h3>
+                        <ul>
+                            <li>No account or sign-up. The app does not collect your name, email, location, contacts or any other personal information.</li>
+                            <li>The app contains no third-party analytics, advertising or crash-reporting services, and does not track you.</li>
+                            <li>Your home country comes from your phone's region setting or your own choice. It is only used to work out trip distances, is stored on your device and in your iCloud, and does not use location services.</li>
+                        </ul>
+
+                        <h3>7.7 Children</h3>
+                        <p>The app is suitable for all ages and does not knowingly collect any information from children.</p>
+
+                        <h3>7.8 Changes</h3>
+                        <p>If this policy changes, we will update this page and the effective date.</p>
+
+                        <h3>7.9 Contact</h3>
+                        <p>Questions? Email us at: <a href="mailto:karepbq@gmail.com">karepbq@gmail.com</a></p>
+                    </div>
+                </section>
             </div>
         </main>
 

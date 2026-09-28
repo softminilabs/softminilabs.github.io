@@ -446,6 +446,8 @@ html[lang="zh-CN"] .hero-title { letter-spacing: 0.02em; }
 .privacy-content li { margin-bottom: 8px; }
 .privacy-content a { color: var(--vermilion); text-decoration: none; border-bottom: 1px solid rgba(168, 70, 47, 0.35); }
 .privacy-content a:hover { border-bottom-color: var(--vermilion); }
+/* 吸顶导航会挡住锚点跳转（如 privacy.html#pipstrip）后的标题 */
+.privacy-content [id] { scroll-margin-top: 84px; }
 
 /* ---------- 404 ---------- */
 .not-found { text-align: center; padding: 120px 0 60px; }
