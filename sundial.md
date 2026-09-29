@@ -122,3 +122,5 @@ You glance at where the shadow falls, and you know where you stand in the day. T
 
 The free version lets you create three widgets with the basic styles and every palette. Sundial Pro removes the limit and unlocks every style and iCloud sync, on iPhone, iPad and Mac.
 </div>
+
+<p><a href="https://fazier.com" target="_blank"><img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=launched&theme=light" width="120" alt="Fazier badge"></a></p>
